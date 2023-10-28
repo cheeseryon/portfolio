@@ -31,6 +31,7 @@ body {min-width:413px; font-family: "pretendard",sans-serif; font-size: 1.6rem; 
 .site .content .text h3 span {display: inline-block; margin-left:0.2em; font-size: 3rem;}
 .site .content .text li {font-size: 3.6rem; margin-top: 0.5em;}
 .site .content .text li.info {font-size: 2rem; margin-top: 1.666em; line-height: 1.5;}
+.site .content .text li.iconArea {margin-top: 0.5em;}
 .site .content .text li.iconArea span {display: inline-block; width:50px; height: 50px;}
 .site .content .text li.iconArea span img {width: 100%; height: 100%; border-radius:5px;}
 .site .content .text li.iconArea span.kakaoIcon {position: relative; top:2px;}
@@ -64,7 +65,7 @@ body {min-width:413px; font-family: "pretendard",sans-serif; font-size: 1.6rem; 
 /* micro */
 #micro {background: url(../img/microBg.png) no-repeat center/cover;} 
 #micro .content .link a:hover {background: #fff; color:#3da5cc;}
-#micro .content .part {font-size: 2rem; font-weight: 500;}
+#micro .content .part {margin-top: 1em; font-size: 2.2rem; font-weight: 500;}
 
 /* kakao */
 #kakao {background: url(../img/kakaoBg.png) no-repeat center/cover;} 
