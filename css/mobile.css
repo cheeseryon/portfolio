@@ -1,0 +1,112 @@
+@charset "utf-8";
+@import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css); 
+
+@media screen and (min-width:981px) and (max-width:1400px) {
+    .min1400 {display: none;}
+    .max1400 {display: block;}
+    .min980 {display: block;}
+    .max980 {display: none;}
+    .min680 {display: block;}
+    .max680 {display: none;}
+
+    .leftArea {max-width:220px;}
+    .leftArea ul li {padding-left: 0.625em;}
+    .leftArea ul li a {font-size: 1.6rem;}
+    .rightArea .page .pageBg {width:100%; padding-left:13.75em;}
+
+    .site .content {position: relative; display: block; height: auto;}
+    .site .content .text {width:100%; padding: 0;}
+    .site .content .text h3 {font-size: 4rem;}
+    .site .content .text h3 span {font-size: 2.4rem;}
+    .site .content .text li.info {margin-top: 1em;}
+    .site .content .text li.iconArea span {width:40px; height: 40px;}
+    .site .content .text li.link {margin-top: 1.111em;}
+    .site .content .text li.link a {font-size: 1.5rem;}
+    .site .content .text li.message {position: absolute; bottom:0; right:5%; font-size: 1.4rem;}
+    .site .content .imgBox {width:90%; margin: 2.5em auto 2em;}
+
+    #footer .content p {font-size: 2rem;}
+    #footer .content span.git a {font-size: 1.5rem;}
+}
+
+@media screen and (min-width:680px) and (max-width:980px) {
+    .min1400 {display: none;}
+    .max1400 {display: block;}
+    .min980 {display: none;}
+    .max980 {display: block;}
+    .min680 {display: block;}
+    .max680 {display: none;}
+
+    .moblieGnb {display:block;}
+    .closeBtn {display:block;}
+    .moblieGnb {position: fixed; top:32px; left:38px; width:40px; height: 40px; z-index: 100;}
+    .moblieGnb a {display: block; width: 100%; height: 100%;}
+    .moblieGnb a img {display: block; width: 100%; height: 100%;}
+
+    .leftArea {max-width:280px; visibility: hidden; opacity: 0; transition: 0.1s;}
+    .leftArea.active {visibility: visible; opacity: 1;}
+    .leftArea .closeBtn {position: absolute; top:14px; right:14px; width:40px; height:40px; z-index:150; opacity: 0.7;}
+    .leftArea .closeBtn a,
+    .leftArea .closeBtn a img {display: block; width: 100%; height: 100%;}
+    .leftArea ul li {padding-left: 0.625em;}
+    .leftArea ul li a {font-size: 1.6rem;}
+    .rightArea .page .pageBg {width:100%; padding-top: 3.125em;}
+
+    .site .content {position: relative; display: block; height: auto; width:80%;}
+    .site .content .text {width:100%; padding: 0;}
+    .site .content .text h3 {font-size: 4rem;}
+    .site .content .text h3 span {font-size: 2.4rem;}
+    .site .content .text li.info {margin-top: 1em;}
+    .site .content .text li.iconArea span {width:40px; height: 40px;}
+    .site .content .text li.link {margin-top: 1.111em;}
+    .site .content .text li.link a {font-size: 1.4rem;}
+    .site .content .text li.message {position: absolute; bottom:0; right:0%; font-size: 1.4rem;}
+    .site .content .imgBox {width:100%; margin: 2.5em auto 2em;}
+
+    #home {background: url(../img/homeBg_modify02.png) no-repeat left bottom;}
+    #home h1 {font-size: 5rem;}
+    #footer {background: url(../img/homeBg_modify02.png) no-repeat left bottom;}
+    #footer .content p {font-size: 1.8rem;}
+    #footer .content span.git a {font-size: 1.4rem;}
+}
+
+@media screen and (max-width:680px) {
+    .min1400 {display: none;}
+    .max1400 {display: block;}
+    .min980 {display: none;}
+    .max980 {display: block;}
+    .min680 {display: none;}
+    .max680 {display: block;}
+
+    .moblieGnb {display:block;}
+    .closeBtn {display:block;}
+    .moblieGnb {position: fixed; top:32px; left:38px; width:30px; height: 30px; z-index: 100;}
+    .moblieGnb a {display: block; width: 100%; height: 100%;}
+    .moblieGnb a img {display: block; width: 100%; height: 100%;}
+
+    .leftArea {max-width:280px; visibility: hidden; opacity: 0; transition: 0.1s;}
+    .leftArea.active {visibility: visible; opacity: 1;}
+    .leftArea .closeBtn {position: absolute; top:14px; right:14px; width:30px; height:30px; z-index:150; opacity: 0.7;}
+    .leftArea .closeBtn a,
+    .leftArea .closeBtn a img {display: block; width: 100%; height: 100%;}
+    .leftArea ul li {padding-left: 0.625em;}
+    .leftArea ul li a {font-size: 1.6rem;}
+    .rightArea .page .pageBg {width:100%; padding-top:0;}
+
+    .site .content {position: relative; display: block; height: auto; width:80%;}
+    .site .content .text {width:100%; padding: 0;}
+    .site .content .text h3 {font-size: 3rem;}
+    .site .content .text h3 span {font-size: 2.2rem;}
+    .site .content .text li.info {margin-top: 1em; font-size:1.6rem;}
+    .site .content .text li.iconArea span {width:40px; height: 40px;}
+    .site .content .text li.link {margin-top: 1.111em;}
+    .site .content .text li.link a {font-size: 1.3rem;}
+    .site .content .text li.message {position: absolute; bottom:0; right:0%; font-size: 1.2rem;}
+    .site .content .imgBox {width:100%; margin: 2.5em auto 2em;}
+
+    #home {background: url(../img/homeBg_modify02.png) no-repeat left bottom;}
+    #home h1 {font-size: 4.4rem; text-align: center;}
+    #footer {background: url(../img/homeBg_modify02.png) no-repeat left bottom;}
+    #footer .content p {font-size: 1.6rem;}
+    #footer .content span.git a {font-size: 1.3rem;}
+}

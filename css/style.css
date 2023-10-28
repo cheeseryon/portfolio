@@ -1,0 +1,78 @@
+@charset "utf-8";
+@import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css); 
+
+html {font-size: 0.625em;}
+body {min-width:413px; font-family: "pretendard",sans-serif; font-size: 1.6rem; overflow: hidden;}
+* {box-sizing: border-box;}
+
+.max1400 {display: none;}
+.max980 {display: none;}
+.max680 {display: none;}
+
+.moblieGnb {display: none;}
+.closeBtn {display: none;}
+
+.leftArea {position:fixed; top:20px; left:20px; width:100%; max-width:280px; height:calc(100% - 40px); display: flex; justify-content: center; align-items: start; z-index: 100;}
+.leftArea ul {width:100%; height: 100%; padding: 2.5em 0; z-index: 100;}
+.leftArea ul li {width:100%; height:40px; padding-left: 1.875em; line-height: 40px; margin: 1.25em 0;}
+.leftArea ul li a {position: relative; left:0; display: block; padding-left:0.888em;font-size: 18px; transition: 0.3s; color:#666; font-weight: 500; overflow: hidden;}
+.leftArea ul li a:before {content:''; position: absolute; top:48%; left:-14px; transform:translateY(-50%) ;width:10px; height:4px; background: #353535;  transition:0.3s}
+.leftArea ul li a.active {left:10px; color:#111;}
+.leftArea ul li a.active:before {left:0px}
+.leftArea .leftBg {position: absolute; width:100%;  height:100%; margin: 0 auto; background: #fff;}
+.rightArea {width:100%;}
+.rightArea > div {height: 100vh;}
+.rightArea .page .pageBg {width:85%; height:100%; float:right;  display: flex; justify-content: center; align-items: center;}
+
+/* site 공통요소 */
+.site .content {position: relative; width:85%; height:45%; display: flex; justify-content: space-between;}
+.site .content .text {width: 45%; padding:1.25em; color:#fff}
+.site .content .text h3 {font-size: 5rem;}
+.site .content .text h3 span {display: inline-block; margin-left:0.2em; font-size: 3rem;}
+.site .content .text li {font-size: 3.6rem; margin-top: 0.5em;}
+.site .content .text li.info {font-size: 2rem; margin-top: 1.666em; line-height: 1.5;}
+.site .content .text li.iconArea span {display: inline-block; width:50px; height: 50px;}
+.site .content .text li.iconArea span img {width: 100%; height: 100%; border-radius:5px;}
+.site .content .text li.iconArea span.kakaoIcon {position: relative; top:2px;}
+.site .content .text li.iconArea span.kakaoIcon img {border:1px solid #5f5f5f;}
+.site .content .text li.message {margin-top: 1.25em; font-size: 1.6rem;}
+.site .content .text li.link {margin-top: 2.5em;}
+.site .content .text li.link a {display: inline-block; padding: 0.75em 1.5em; border:1px solid #fff; font-size: 1.6rem; font-weight: 500; transition:0.1s}
+.site .content .imgBox {width:50%; height:100%; overflow: hidden; box-shadow: rgba(0, 0, 0, 0.24) 0px 30px 30px;}
+.site .content .imgBox img {width:100%; height:100%; border-radius:4px;}
+
+/* home  */
+#home {position: relative; width:100%; height: 100vh; background: url(../img/homeBg_modify.png) no-repeat center/cover;} 
+#home h1 {font-size: 6rem; color:#ffffff;}
+#home h1 span {color:#353535; font-weight: 800;}
+#home .content {position: relative; width:80%; height:25%;}
+#home .content h2 {position: absolute; left:0; bottom:0;}
+
+/* escape */
+#escape {background: url(../img/escapeBg.png) no-repeat center/cover;} 
+#escape .content .link a:hover {background: #fff; color:#5281cf;}
+
+/* forena */
+#forena {background: url(../img/forenaBg.png) no-repeat center/cover;} 
+#forena h1 {letter-spacing: -1px;}
+#forena .content .link a:hover {background: #fff; color:#987eeb;}
+
+/* ks */
+#ks {background: url(../img/ksBg.png) no-repeat center/cover;} 
+#ks .content .link a:hover {background: #fff; color:#ae9d8c;}
+
+/* micro */
+#micro {background: url(../img/microBg.png) no-repeat center/cover;} 
+#micro .content .link a:hover {background: #fff; color:#3da5cc;}
+#micro .content .part {font-size: 2rem; font-weight: 500;}
+
+/* kakao */
+#kakao {background: url(../img/kakaoBg.png) no-repeat center/cover;} 
+#kakao .content .link a:hover {background: #fff; color:#efbc50;}
+
+/* footer */
+#footer {background: url(../img/homeBg_modify.png) no-repeat center/cover;} 
+#footer .content {width:80%; color:#fff;}
+#footer p {margin-bottom: 1em; line-height:2; font-size: 2rem; font-weight: 500;}
+#footer span.git a {display: inline-block; margin-top: 2em; padding: 0.75em 1.5em; border:1px solid #fff; font-size:1.6rem; transition: 0.1s;}
+#footer span.git a:hover {color:#84b342; border:1px solid #fff;background: #fff;}

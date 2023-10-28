@@ -1,0 +1,89 @@
+@charset 'utf-8';
+
+html,
+body,
+head,
+title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+div,
+blockquote,
+address,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+table,
+tr,
+td,
+th,
+caption,
+thead,
+tbody,
+tfoot,
+form,
+legend,
+fieldset,
+nav,
+aside,
+figure,
+section,
+article,
+main,
+footer {
+    margin: 0;
+    padding: 0;
+}
+
+header,
+nav,
+aside,
+main,
+footer,
+section,
+figure,
+article {
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+li {
+    list-style: none;
+}
+
+table {
+    border-collapse: collapse;
+}
+
+em,
+i,
+address,
+cite {
+    font-style: normal;
+}
+
+caption,
+.blind {
+    font-size: 0;
+    line-height: 0;
+    height: 0;
+    overflow: hidden;
+    text-indent: -9999px;
+}
+
+.clear:before, .clear:after {
+    content : '';
+    display : block;
+    clear : both;
+}
