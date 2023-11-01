@@ -96,19 +96,19 @@
     .leftArea ul li a {font-size:1.6rem;}
     .rightArea .page .pageBg {width:100%; padding-top:4em;}
 
-    .site .content {position:relative; display:block; height:auto; width:80%;}
+    .site .content {display:block; height:auto; width:80%;}
     .site .content .text {position:relative; width:100%; padding:0;}
     .site .content .text h3 {position:relative; top:0; margin-bottom:0.5em;font-size:4rem; text-align:left;}
     .site .content .text h3 span {font-size:2.4rem;}
-    .site .content .text li.info {margin-top:1em;}
+    .site .content .text li.info {position: relative; margin-top:1em;}
     .site .content .text li.info p {font-size:2rem;}
     .site .content .text li.info ul li {font-size:1.6rem;}
-    .site .content .text li.info .iconArea {position:absolute; bottom:0; right:0}
+    .site .content .text li.info .iconArea {position:absolute; top:0; right:0}
     .site .content .text li.info .iconArea span {width:40px; height:40px}
     .site .content .text li.link {margin-top:2.222em;}
     .site .content .text li.link a {font-size:1.3rem;}
     .site .content .imgBox {width:100%; margin:2.5em auto 2em;}
-    .site .content .imgBox .message {position:absolute; bottom:0; right:0%; font-size:1.3rem;}
+    .site .content .imgBox .message {font-size:1.3rem;}
 
     #home {background:url(../img/homeBg_modify02.png) no-repeat left bottom;}
     #home h1 {font-size:4.4rem; text-align:center;}
