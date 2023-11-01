@@ -105,9 +105,11 @@
     .site .content .text li.info ul li {padding-left: 0.5em; font-size:1.6rem;}
     .site .content .text li.info ul li:before {content:''; position: absolute; top:8px;}
     .site .content .text li.info .iconArea {position:absolute; top:0; right:0}
-    .site .content .text li.info .iconArea span {width:40px; height:40px}
-    .site .content .text li.link {margin-top:2.222em;}
-    .site .content .text li.link a {font-size:1.3rem;}
+    .site .content .text li.info .iconArea span {width:40px; height:40px;}
+
+    .site .content .text li.link {margin-top:0;}
+    .site .content .text li.link span {display: inline-block; margin-top:0.625em;}
+    .site .content .text li.link span a {font-size:1.3rem;}
     .site .content .imgBox {width:100%; margin:2.5em auto 2em;}
     .site .content .imgBox .message {font-size:1.3rem;}
 
