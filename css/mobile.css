@@ -67,7 +67,7 @@
     .site .content article .message {position:absolute; bottom:0; right:0%; font-size:1.4rem;}
 
     #home {background:url(../img/homeBg_modify02.png) no-repeat left bottom;}
-    #home h1 {font-size:5rem;}
+    #home h1 {font-size:5rem; text-align: center;}
     #footer {background:url(../img/homeBg_modify02.png) no-repeat left bottom;}
     #footer .content p {font-size:1.8rem;}
     #footer .content span.git a {font-size:1.4rem;}

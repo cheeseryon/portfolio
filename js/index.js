@@ -155,10 +155,6 @@ window.addEventListener('wheel', function(e) {
 		btnClassAdd()
 	}, {passive: false}
 )
-window.addEventListener('resize', function(e) {
-	scrollPageMove(e)
-})
-
 window.addEventListener('load' , function () {
 	btnReloadClassAdd()
   }
