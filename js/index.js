@@ -1,6 +1,6 @@
 /* 스파이크롤러 기능 */
 let pageMoveBtn = Array.from(document.querySelectorAll('.pageMoveBtn'))
-let pageSection = Array.from(document.querySelectorAll('.page'))
+let pageSection = Array.from(document.querySelectorAll('section'))
 let index = 0
 function btnClickPageMove () {
 	for(let i = 0; i < pageMoveBtn.length; i++) {
@@ -131,7 +131,7 @@ function btnReloadClassAdd() {
 let moblieGnbShowBtn = document.querySelector('.moblieGnb a img')
 function mobileGnbShow() {
 	moblieGnbShowBtn.addEventListener('click' , function() {
-		let leftArea = document.querySelector('.leftArea')
+		let leftArea = document.querySelector('nav')
 		leftArea.classList.add('active')
 	})
 }
@@ -142,7 +142,7 @@ mobileGnbShow()
 let mobileGnbCloseBtn = document.querySelector('.closeBtn a img')
 function mobileGnbClose() {
 	mobileGnbCloseBtn.addEventListener('click' , function() {
-		let leftArea = document.querySelector('.leftArea')
+		let leftArea = document.querySelector('nav')
 		leftArea.classList.remove('active')
 	})
 }
@@ -155,6 +155,9 @@ window.addEventListener('wheel', function(e) {
 		btnClassAdd()
 	}, {passive: false}
 )
+window.addEventListener('resize', function(e) {
+	scrollPageMove(e)
+})
 
 window.addEventListener('load' , function () {
 	btnReloadClassAdd()

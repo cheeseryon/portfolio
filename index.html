@@ -2,19 +2,20 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>PORTFOLIO</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
     
     <script src="js/index.js" defer></script>
-
 </head>
 <body>
-    <div id="wrap" class="clear">
+    <div id="wrap">
         <span class="moblieGnb"><a href="javascript:void(0)"><img src="img/icon/hamburger.png" alt=""></a></span>
-        <section class="leftArea">
+        <nav>
             <span class="closeBtn"><a href="javascript:void(0)"><img src="img/icon/closeBtn.png" alt=""></a></span>
             <ul>
                 <li><a href="" class="pageMoveBtn" data-btnIdx="0">HOME</a></li>
@@ -26,11 +27,11 @@
                 <li><a href="" class="pageMoveBtn" data-btnIdx="6">FOOTER</a></li>
             </ul>
             <div class="leftBg"></div>
-        </section>
+        </nav>
       
-        <section class="rightArea">
-            <div id="home" class="page" data-pageIdx="0">
-                <div class="pageBg">            
+        <main>
+            <section id="home" data-pageIdx="0">
+                <div class="box">            
                     <div class="content">
                         <div class="min680">
                             <h1>자바스크립트를 좋아하는<br>퍼블리셔 <span>이한빛</span>입니다</h1>
@@ -40,10 +41,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
         
-            <div id="escape" class="page site" data-pageIdx="1">
-                <div class="pageBg">
+            <section id="escape" class="site" data-pageIdx="1">
+                <div class="box">
                     <div class="content">
                         <div class="text">                            
                             <h3>또!방탈출 <span>PC</span></h3>
@@ -84,10 +85,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="micro" class="page site" data-pageIdx="2">
-                <div class="pageBg">
+            <section id="micro" class="site" data-pageIdx="2">
+                <div class="box">
                     <div class="content">
                         <div class="text">                          
                             <h3>MICRO LEARNING <span>반응형</span></h3>
@@ -128,10 +129,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="forena" class="page site" data-pageIdx="3">
-                <div class="pageBg">
+            <section id="forena" class="site" data-pageIdx="3">
+                <div class="box">
                     <div class="content">
                         <div class="text">
                             <h3>광명 자이 더 샵 포레나 매거진 <span>반응형</span></h3>
@@ -174,10 +175,10 @@
                         </div>
                     </div>
                 </div>
-            </div>  
+            </section>  
 
-            <div id="ks" class="page site" data-pageIdx="4">
-                <div class="pageBg">
+            <section id="ks" class="site" data-pageIdx="4">
+                <div class="box">
                     <div class="content">
                         <div class="text">
                             <h3>KS벽지 <span>반응형</span></h3>
@@ -218,10 +219,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="kakao" class="page site" data-pageIdx="5">
-                <div class="pageBg">
+            <section id="kakao" class="site" data-pageIdx="5">
+                <div class="box">
                     <div class="content">
                         <div class="text">                           
                             <h3>KAKAO JEJU <span>PC</span></h3>
@@ -265,10 +266,10 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div id="footer" class="page" data-pageIdx="6">
-                <div class="pageBg">
+            <section id="footer" data-pageIdx="6">
+                <div class="box">
                     <div class="content">   
                         <div class="min980">                   
                             <p>
@@ -309,7 +310,7 @@
                         <span class="git"><a href="https://github.com/cheeseryon/portfolio" target="_blank">Git 바로가기</a></span>                  
                     </div>
                 </div>
-            </div>
+            </section>
         </section>
     </div>
 </body>
