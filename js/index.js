@@ -88,7 +88,7 @@ function touchEvent () {
 				return accumulator + currentHeight.clientHeight
 			}, 0)
 
-			window.scrollTo({top: totalHieght , behavior : "smooth"}); 
+			window.scrollTo({top: totalHieght , behavior : "auto"}); 
 
 			for(let i = 0; i < pageSection.length; i ++) {
 				pageSection[i].classList.remove('active')
