@@ -1,4 +1,4 @@
-/* 스파이크롤러 기능 */
+/* 스파이스크롤 기능 */
 let pageMoveBtn = Array.from(document.querySelectorAll('.pageMoveBtn'))
 let pageSection = Array.from(document.querySelectorAll('section'))
 let index = 0
@@ -27,10 +27,9 @@ function btnClickPageMove () {
 btnClickPageMove()
 
 
-/* 스크롤시 섹션이동 기능 */
+/* PC용 스크롤시 섹션이동 기능 */
+if(window.matchMedia("(min-Width:680px)").matches) {
 let scrolling = true;
-
-/* pc용 스크롤 이벤트 */
 function scrollPageMove(e) {
 	if(scrolling) {
 		if(e.deltaY > 0){
@@ -60,48 +59,7 @@ function scrollPageMove(e) {
 		}, 600)
 	}
 }
-
-/* 모바일용 터치 이벤트 */
-let startScreenY;
-let endScreenY;
-
-function touchEvent () {
-	document.body.addEventListener('touchstart', (e) => {
-	startScreenY = e.changedTouches[0].clientY;
-	});
-	document.body.addEventListener('touchend', (e) => {
-		endScreenY = e.changedTouches[0].clientY;
-		if(scrolling) {
-			if(startScreenY > endScreenY + 100) {
-				if(index < pageSection.length - 1) {
-					index ++
-				}
-			} else if (startScreenY + 100 < endScreenY) {
-				if(index > 0)
-				index --
-			}
-
-			let filteredPage = pageSection.filter((item , idx) => idx < index)
-			let totalHieght = filteredPage.reduce((accumulator,currentHeight) => {
-				return accumulator + currentHeight.clientHeight
-			}, 0)
-
-			window.scrollTo({top: totalHieght , behavior : "smooth"}); 
-
-			for(let i = 0; i < pageSection.length; i ++) {
-				pageSection[i].classList.remove('active')
-			}
-			pageSection[index].classList.add('active')
-
-			scrolling = false;
-			setTimeout(() => {
-				scrolling = true
-			}, 600)
-		}
-		btnClassAdd()
-	});
 }
-touchEvent()
 
 /* 버튼에 active 클래스 추가 함수 */
 function btnClassAdd() {
