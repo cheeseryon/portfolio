@@ -1,7 +1,3 @@
-import smoothscroll from 'smoothscroll-polyfill';
-
-// kick off the polyfill!
-smoothscroll.polyfill();
 
 /* 스파이스크롤 기능 */
 let pageMoveBtn = Array.from(document.querySelectorAll('.pageMoveBtn'))
