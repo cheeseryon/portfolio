@@ -1,3 +1,8 @@
+import smoothscroll from 'smoothscroll-polyfill';
+
+// kick off the polyfill!
+smoothscroll.polyfill();
+
 /* 스파이스크롤 기능 */
 let pageMoveBtn = Array.from(document.querySelectorAll('.pageMoveBtn'))
 let pageSection = Array.from(document.querySelectorAll('section'))
@@ -60,6 +65,7 @@ function scrollPageMove(e) {
 		}, 600)
 	}
 }
+
 
 /* 모바일용 터치 이벤트 */
 let startScreenY;
@@ -148,7 +154,6 @@ function mobileGnbClose() {
 }
 mobileGnbClose()
 
-/* 함수실행 */
 window.addEventListener('wheel', function(e) {
 		e.preventDefault()
 		scrollPageMove(e)
