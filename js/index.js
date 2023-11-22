@@ -64,7 +64,7 @@ function scrollPageMove(e) {
 
 
 /* 모바일용 터치 이벤트 */
-let startScreenY;
+/* let startScreenY;
 let endScreenY;
 
 function touchEvent () {
@@ -103,7 +103,7 @@ function touchEvent () {
 		btnClassAdd()
 	});
 }
-touchEvent()
+touchEvent() */
 
 /* 버튼에 active 클래스 추가 함수 */
 function btnClassAdd() {
