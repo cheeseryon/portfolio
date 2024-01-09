@@ -2,269 +2,265 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>PORTFOLIO</title>
+    <title>이한빛 포트폴리오</title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/mobile.css">
     
     <script src="js/index.js" defer></script>
-</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iamdustan-smoothscroll/0.4.0/smoothscroll.min.js"></script>
+    
 </head>
 <body>
     <div id="wrap">
-        <span class="moblieGnb"><a href="javascript:void(0)"><img src="img/icon/hamburger.png" alt=""></a></span>
-        <nav>
-            <span class="closeBtn"><a href="javascript:void(0)"><img src="img/icon/closeBtn.png" alt=""></a></span>
-            <ul>
-                <li><a href="" class="pageMoveBtn" data-btnIdx="0">HOME</a></li>
-                <li><a href="" class="pageMoveBtn" data-btnIdx="1">또!방탈출</a></li>
-                <li><a href="" class="pageMoveBtn" data-btnIdx="2">MICRO LEARNING</a></li>
-                <li><a href="" class="pageMoveBtn" data-btnIdx="3">광명자이더샵포레나 매거진</a></li>
-                <li><a href="" class="pageMoveBtn" data-btnIdx="4">KS벽지</a></li>
-                <li><a href="" class="pageMoveBtn" data-btnIdx="5">FOOTER</a></li>
+        <header>
+            <div class="inner">
+                <ul>
+                    <li><h1 class="shadowText logo"><a href="#">L</a></h1></li>                    
+                </ul>
+            </div>
+        </header>
+
+        <div id="fullMenuBtn">
+            <a href="#">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+
+        <div id="fullMenu">
+            <div class="inner">
+                <ul class="fullMenuHead">
+                    <li><h1 class="shadowText logo"><a href="#">L</a></h1></li>
+                </ul>
+            </div>
+            <ul class="moveBtnArea">
+                <li class="menuMoveBtn" data-btnIdx="0"><a href="#">HOME</a></li>
+                <li class="menuMoveBtn" data-btnIdx="1"><a href="#">또!방탈출</a></li>
+                <li class="menuMoveBtn" data-btnIdx="2"><a href="#">MICRO LEARNING</a></li>
+                <li class="menuMoveBtn" data-btnIdx="3"><a href="#">광명 자이더샵 포레나 매거진</a></li>
+                <li class="menuMoveBtn" data-btnIdx="4"><a href="#">KS벽지</a></li>
+                <li class="menuMoveBtn" data-btnIdx="5"><a href="#">Footer</a></li>
             </ul>
-            <div class="leftBg"></div>
-        </nav>
-      
+        </div>
+
         <main>
-            <section id="home" data-pageIdx="0">
-                <div class="box">            
+            <div class="inner">
+                <div class="page" id="home" data-pageIdx="0">
                     <div class="content">
-                        <div class="min680">
-                            <h1>자바스크립트를 좋아하는<br>퍼블리셔 <span>이한빛</span>입니다</h1>
-                        </div>
-                        <div class="max680">
-                            <h1>자바스크립트를<br>좋아하는 퍼블리셔<br><span>이한빛</span>입니다</h1>
-                        </div>
-                    </div>
-                </div>
-            </section>
-        
-            <section id="escape" class="site" data-pageIdx="1">
-                <div class="box">
-                    <div class="content">
-                        <div class="text">                            
-                            <h3>또!방탈출 <span>PC</span></h3>
-                            <ul>                                   
-                                <li class="info">    
-                                    <div>
-                                        <p>구성</p>
+                        <div class="rotateBox">
+                            <div class="item01">
+                                <h2>PUB<span class="shadowText">L</span>ISHER</h2>
+                                <h1>PORTFO<span class="shadowText">L</span>IO</h1>
+                            </div>
+
+                            <div class="item02">
+                                <h3><span class="shadowText">L</span>EE HAN BIT</h3>
+                                <ul class="bottomTextArea">
+                                    <li class="webText commonText">자바스크립트를 좋아하는 퍼블리셔 <b>이한빛</b> 입니다.</li>
+                                    <li class="moblieText commonText">자바스크립트를 좋아하는 <br>퍼블리셔<b>이한빛</b> 입니다.</li>
+                                    <li class="iconArea">
+                                        <span>SKILL</span>
                                         <ul>
-                                            <li>메인페이지</li>
-                                            <li>좋아요 목록</li>
+                                            <li><span>HTML</span></li>
+                                            <li><span>CSS</span></li>
+                                            <li><span>JS</span></li>
+                                            <li><span>REACT</span></li>
+                                            <li><span>VSCODE</span></li>                                          
                                         </ul>
-                                    </div>   
-                                    <div>
-                                        <p>특징</p>
-                                        <ul>
-                                            <li>필터,검색,정렬,좋아요,상세보기(모달) 기능 구현</ㅔ>
-                                            <li>3개의 좋아요 버튼과 좋아요 목록은 redux를 통해 연동</li>
-                                            <li>카카오 맵 API 이용</li>
-                                        </ul>         
-                                    </div>     
-                                    <div class="iconArea">                                        
-                                        <div>
-                                            <span><img src="img/icon/html.png" alt=""></span>
-                                            <span><img src="img/icon/css.png" alt=""></span>
-                                            <span><img src="img/icon/react.webp" alt="리액트아이콘"></span>
-                                        </div>
-                                    </div>                                              
-                                </li>
-                               
-                                <li class="link">
-                                    <span class="site"><a href="https://escapesite.netlify.app/" target="_blank">사이트 바로가기</a></span>
-                                    <span class="git"><a href="https://github.com/cheeseryon/escape" target="_blank">Git 바로가기</a></span>
-                                </li>                                    
-                            </ul>
+                                    </li>  
+                                    <li class="tag">
+                                        <span>#깔끔한</span>
+                                        <span>#효율적인</span>
+                                        <span>#호기심많은</span>
+                                    </li>                             
+                                </ul>
+                            </div>
                         </div>
-                        <article>                            
-                            <img src="img/escape.PNG" alt="또!방탈출 메인화면">                            
-                        </article>
                     </div>
                 </div>
-            </section>
+                
 
-            <section id="micro" class="site" data-pageIdx="2">
-                <div class="box">
+
+                <div id="escape" class="site page" data-pageIdx="1">
                     <div class="content">
-                        <div class="text">                          
-                            <h3>MICRO LEARNING <span>반응형</span></h3>
-                            <ul>                                   
-                                <li class="info">
-                                    <div>
-                                        <p>구성</p>
-                                        <ul>
-                                            <li>메인페이지</li>
-                                            <li>모든 서브페이지</li>
-                                        </ul>  
-                                    </div>
-                                    <div>
-                                        <p>특징</p>
-                                        <ul>
-                                            <li>웹디자이너와 함께 진행한 외주 프로젝트 / 기여도:퍼블리싱 90%</li>
-                                            <li>확장성과 안정성을 위해 SWIPER 사용</li>
-                                            <li>비교적 쉬운 유지보수를 위해 제이쿼리 사용</li>
-                                        </ul>                                           
-                                    </div>
-                                    <div class="iconArea">
-                                        <div>
-                                            <span><img src="img/icon/html.png" alt=""></span>
-                                            <span><img src="img/icon/css.png" alt=""></span>
-                                            <span ><img src="img/icon/jquery.png" alt=""></span>
-                                        </ㅇ>
-                                    </div>
-                                </li>
-                               
-                                <li class="link">
-                                    <span class="site"><a href="https://cheeseryon.github.io/microlearning/" target="_blank">사이트 바로가기</a></span>
-                                    <span class="git"><a href="https://github.com/cheeseryon/microlearning" target="_blank">Git 바로가기</a></span>
-                                </li>                                    
-                            </ul>
+                        <div class="imgArea">
+                            <figure>                            
+                                <a href="https://arescape.web.app" target="_blank">
+                                    <img src="img/escape.PNG" alt="또!방탈출 메인화면">
+                                </a>                    
+                            </figure>
                         </div>
-                        <article>
-                            <img src="img/micro.PNG" alt="">
-                        </article>
+                        
+                        <ul class="textArea">
+                            <li><h3>또!방탈출 <span>PC</span></h3></li>                      
+                            <li class="info">
+                                <ul>
+                                    <li><span>메인페이지 / 상세화면 / 마이페이지 제작</span></li>
+                                    <li><span>운영을 목표로 제작중인 사이트</span></li>
+                                    <li><span>firebase로 다양한 기능 구현</span></li>                                           
+                                    <li><span>카카오 맵 API 사용</span></li>
+                                    <li><span>React의 라이브러리 사용</span></li>                                    
+                                </ul>         
+                            </li>    
+                            <li class="iconArea">                                        
+                                <div>
+                                    <span><img src="img/icon/html.png" alt="html아이콘"></span>
+                                    <span><img src="img/icon/css.png" alt="css아이콘"></span>
+                                    <span><img src="img/icon/react.webp" alt="react아이콘"></span>
+                                </div>
+                            </li>                                              
+                            <li class="link">    
+                                <span class="siteLink"><a href="https://arescape.web.app" target="_blank">사이트 바로가기</a></span>
+                                <span class="git"><a href="https://github.com/cheeseryon/escape" target="_blank">Git 바로가기</a></span>                   
+                            </li> 
+                        </ul>
                     </div>
                 </div>
-            </section>
 
-            <section id="forena" class="site" data-pageIdx="3">
-                <div class="box">
+                <div id="micro" class="site page" data-pageIdx="2">
                     <div class="content">
-                        <div class="text">
-                            <h3>광명 자이 더 샵 포레나 매거진 <span>반응형</span></h3>
-                            <ul>                                   
-                                <li class="info">
-                                    <div>
-                                    <p>구성</p>
-                                        <ul>
-                                            <li>메인페이지</li>
-                                            <li>모든 서브페이지</li>
-                                        </ul>  
-                                    </div>
-                                    <div>
-                                        <p>특징</p>
-                                            <ul>
-                                                <li>스크롤 이벤트 구현</li>
-                                                <li>viewport에 따라 서브페이지의 구조의 흐름이 달라지는 레이아웃 구현</li>
-                                                <li>viewport에 따라 스크롤이벤트가 발생할 요소가 달라지도록 설계</li>
-                                            </ul>  
-                                        </div> 
-                                    <div class="iconArea">                                       
-                                        <div>
-                                            <span><img src="img/icon/html.png" alt=""></span>
-                                            <span><img src="img/icon/css.png" alt=""></span>
-                                            <span  class="kakaoIcon"><img src="img/icon/js.png" alt=""></span>
-                                        </div>
-                                    </div>
-                                </li>
-                               
-                                <li class="link">
-                                    <span class="site"><a href="https://cheeseryon.github.io/forena/" target="_blank">사이트 바로가기</a></span>
-                                    <span class="git"><a href="https://github.com/cheeseryon/forena" target="_blank">Git 바로가기</a></span>
-                                </li>
-                                
-                            </ul>
+                        <div class="imgArea">                            
+                            <figure>                            
+                                <a href="https://cheeseryon.github.io/microlearning" target="_blank">
+                                    <img src="img/micro.PNG" alt="마이크로러닝 메인화면">
+                                </a> 
+                            </figure>
                         </div>
-                        <article>                           
-                            <img src="img/forena.PNG" alt="광명 자이더샵 포레나 매거진 메인화면">    
-                            <p class="message">해당 사이트는 취업 지원을 위해 클론코딩한 사이트입니다</p>                        
-                        </article>
+                        
+                        <ul class="textArea">
+                            <li><h3>MICRO LEARNING <span>반응형</span></h3></li>                     
+                            <li class="info">   
+                                <ul>
+                                    <li><span>메인페이지 / 서브페이지 전체</span></li>
+                                    <li><span>웹디자이너와 진행한 외주프로젝트(퍼블리싱 기여도 90%)</span></li>
+                                    <li><span>비교적 쉬운 유지보수와 확장성을 위해 제이쿼리와 Swiper 사용</span></li>                                           
+                                </ul>         
+                            </li>    
+                            <li class="iconArea">                                        
+                                <div>
+                                    <span><img src="img/icon/html.png" alt="html아이콘"></span>
+                                    <span><img src="img/icon/css.png" alt="css아이콘"></span>
+                                    <span><img src="img/icon/jquery.png" alt="jquery아이콘"></span>
+                                </div>
+                            </li>                                              
+                            <li class="link">    
+                                <span class="siteLink"><a href="https://cheeseryon.github.io/microlearning" target="_blank">사이트 바로가기</a></span>
+                                <span class="git"><a href="https://github.com/cheeseryon/microlearning" target="_blank">Git 바로가기</a></span>                   
+                            </li> 
+                        </ul>
                     </div>
                 </div>
-            </section>  
 
-            <section id="ks" class="site" data-pageIdx="4">
-                <div class="box">
+                <div id="forena" class="site page" data-pageIdx="3">
                     <div class="content">
-                        <div class="text">
-                            <h3>KS벽지 <span>반응형</span></h3>
-                            <ul>                                   
-                                <li class="info">
-                                    <div>
-                                    <p>구성</p>
-                                        <ul>
-                                            <li>메인페이지</li>                        
-                                        </ul>  
-                                    </div>
-                                    <div>
-                                        <p>특징</p>                                
-                                        <ul>
-                                            <li>이중탭 구현 , 스크롤이벤트 구현</li>                                            
-                                            <li>모바일 메뉴 이중 아코디언 구현</li>                                     
-                                            <li>슬라이드와 재생 및 일시정지 버튼 기능 구현</li>
-                                            <li>SWIPER 사용</li>
-                                        </ul>
-                                        </div>
-                                    <div class="iconArea">
-                                        <div>
-                                            <span><img src="img/icon/html.png" alt=""></span>
-                                            <span><img src="img/icon/css.png" alt=""></span>
-                                            <span  class="kakaoIcon"><img src="img/icon/js.png" alt=""></span>
-                                        </div>           
-                                    </div>                            
-                                </li>
-                                <li class="link">
-                                    <span class="site"><a href="https://cheeseryon.github.io/ks/" target="_blank">사이트 바로가기</a></span>
-                                    <span class="git"><a href="https://github.com/cheeseryon/ks" target="_blank">Git 바로가기</a></span>
-                                </li> 
-                            </ul>
+                        <div class="imgArea">
+                            <figure>                            
+                                <a href="https://cheeseryon.github.io/forena/" target="_blank">
+                                    <img src="img/forena.PNG" alt="광명자이더샵포레나매거진 메인화면">
+                                </a>                      
+                            </figure>
+                            <p class="message">해당 사이트는 취업 지원을 위해 클론코딩한 사이트입니다.</p>
                         </div>
-                        <article>                           
-                            <img src="img/ks.PNG" alt="KS벽지 메인화면">
-                            <p class="message">해당 사이트는 취업 지원을 위해 클론코딩한 사이트입니다</p>
-                        </article>
+                        
+                        <ul class="textArea">
+                            <li><h3>광명 자이더샵 포레나 매거진<span>반응형</span></h3></li>                       
+                            <li class="info">
+                                <ul>
+                                    <li><span>메인페이지 / 서브페이지 전체 제작</span></li>
+                                    <li><span>다양한 스크롤 이벤트 구현</span></li>                                           
+                                </ul>         
+                            </li>    
+                            <li class="iconArea">                                        
+                                <div>
+                                    <span><img src="img/icon/html.png" alt="html아이콘"></span>
+                                    <span><img src="img/icon/css.png" alt="css아이콘"></span>
+                                    <span><img src="img/icon/js.png" alt="js아이콘"></span>
+                                </div>
+                            </li>                                              
+                            <li class="link">    
+                                <span class="siteLink"><a href="https://cheeseryon.github.io/forena/" target="_blank">사이트 바로가기</a></span>
+                                <span class="git"><a href="https://github.com/cheeseryon/forena" target="_blank">Git 바로가기</a></span>                   
+                            </li> 
+                        </ul>
                     </div>
-                </div>
-            </section>
+                </div> 
 
-            <section id="footer" data-pageIdx="5">
-                <div class="box">
+                <div id="ks" class="site page" data-pageIdx="4">
+                    <div class="content">
+                        <div class="imgArea">
+                            <figure>                            
+                                <a href="https://cheeseryon.github.io/ks/" target="_blank">
+                                    <img src="img/ks.PNG" alt="KS벽지 메인화면">
+                                </a>                            
+                            </figure>
+                        <p class="message">해당 사이트는 취업 지원을 위해 클론코딩한 사이트입니다.</p>
+                    </div>
+                        <ul class="textArea">
+                            <li><h3>KS벽지<span>반응형</span></h3></li>                     
+                            <li class="info">    
+                                <ul>
+                                    <li><span>메인페이지 제작</span></li>
+                                    <li><span>슬라이더 구현</span></li>
+                                    <li><span>스크롤 이벤트 구현</span></li>   
+                                    <li><span>이중탭 구현</span></li>   
+                                    <li><span>이중 아코디언 구현</span></li>                                    
+                                </ul>         
+                            </li>    
+                            <li class="iconArea">                                        
+                                <div>
+                                    <span><img src="img/icon/html.png" alt="html아이콘"></span>
+                                    <span><img src="img/icon/css.png" alt="css아이콘"></span>
+                                    <span><img src="img/icon/js.png" alt="js아이콘"></span>
+                                </div>
+                            </li>                                              
+                            <li class="link">    
+                                <span class="siteLink"><a href="https://cheeseryon.github.io/ks/" target="_blank">사이트 바로가기</a></span>
+                                <span class="git"><a href="https://github.com/cheeseryon/ks" target="_blank">Git 바로가기</a></span>                   
+                            </li> 
+                        </ul>
+                    </div>
+                </div> 
+
+                <div class="page" id="footer" data-pageIdx="5">
                     <div class="content">   
-                        <div class="min980">                   
-                            <p>
-                                모든 사이트(해당 사이트 포함)의 기능들은 대부분 자바스크립트로 구현했습니다
-                            </p>   
-                            <p>                        
-                                해당 사이트의 스파이 스크롤 기능은 gnb 메뉴 클릭시 a의 href를 이용하여 화면이 이동하는게 아니기에<br>
-                                브라우저의 '뒤로가기'를 클릭시 이전에 클릭했던 gnb 메뉴의 화면 위치로 이동하지 않으며,<br>                            
-                                '새로고침'을 해도 화면이 맨 위로 이동하지 않도록 스크롤 이벤트도 사용자의 편의성을 고려하여 설계하였습니다
-                            </p>  
-                            <p>               
-                                저는 구조 및 설계하는 것을 좋아합니다.<br>
-                                특히 어려울수록 더 흥미를 느끼고, 또 제가 마주한 벽을 뛰어넘는 것에 매우 큰 성취감을 느낍니다<br>
-                                힘들고 어려운 업무가 주어진다 해도 더 많은 걸 배워나가며, 잘 해낼 자신이 있습니다
-                            </p>
-                            <p> 
-                                짧은 시간이나마 부족한 저의 포트폴리오를 봐주셔서 감사합니다
-                            </p>     
-                        </div>   
-                        <div class="max980">                   
-                            <p>
-                                모든 사이트(해당 사이트 포함)의 기능들은 대부분 자바스크립트로 구현했습니다
-                            </p> 
-                            <p>                   
-                                해당 사이트의 스파이 스크롤 기능은 gnb 메뉴 클릭시 a의 href를 이용하여 화면이 이동하는게 아니기에
-                                브라우저의 '뒤로가기'를 클릭시 이전에 클릭했던 gnb 메뉴의 화면 위치로 이동하지 않으며,                           
-                                '새로고침'을 해도 화면이 맨 위로 이동하지 않도록 스크롤 이벤트도 사용자의 편의성을 고려하여 설계하였습니다
-                            </p>
-                            <p>
-                                저는 구조 및 설계하는 것을 좋아합니다.  
-                                특히 어려울수록 더 흥미를 느끼고, 또 제가 마주한 벽을 뛰어넘는 것에 매우 큰 성취감을 느낍니다 
-                                힘들고 어려운 업무가 주어진다 해도 더 많은 걸 배워나가며, 잘 해낼 자신이 있습니다
-                            </p>
-                            <p>
-                                짧은 시간이나마 부족한 저의 포트폴리오를 봐주셔서 감사합니다
-                            </p>     
-                        </div>
-                        <span class="git"><a href="https://github.com/cheeseryon/portfolio" target="_blank">Git 바로가기</a></span>                  
+                        <p>사이트의 대부분의 기능은 자바스크립트로 구현했습니다.</p>   
+                        <p></p>
+                        <p>짧은 시간이나마 부족한 저의 포트폴리오를 봐주셔서 감사합니다.</p>     
                     </div>
                 </div>
-            </section>
-        </section>
+            </div>
+        </main>
+
+        <aside>
+            <ul class="asideBtnArea">
+                <li class="asideMoveBtn" data-btnIdx="0"><a href="#"></a></li>
+                <li class="asideMoveBtn" data-btnIdx="1"><a href="#"></a></li>
+                <li class="asideMoveBtn" data-btnIdx="2"><a href="#"></a></li>
+                <li class="asideMoveBtn" data-btnIdx="3"><a href="#"></a></li>
+                <li class="asideMoveBtn" data-btnIdx="4"><a href="#"></a></li>
+                <li class="asideMoveBtn" data-btnIdx="5"><a href="#"></a></li>
+            </ul>
+        </aside>
+
+        <div id="scroll">
+            <div class="scrollDown show">
+                <a href="#">
+                    <span class="text">Scroll</span>
+                    <span class="icon"></span>
+                </a>
+            </div>
+            <div class="scrollTop hide">
+                <a href="#">
+                    <span class="icon"></span>
+                    <span class="text">Top</span>
+                </a>
+            </div>
+        </div>
     </div>
 </body>
 </html>
