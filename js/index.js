@@ -62,12 +62,6 @@ function onClickFullMenuHide (e) {
 }
 
 
-/* 스파이스크롤 기능 */
-let asideMoveBtn = Array.from(document.querySelectorAll('.asideMoveBtn'))
-let menuMoveBtn = Array.from(document.querySelectorAll('.menuMoveBtn'))
-let index = 0
-
-
 /* 스파이 스크롤 버튼에 active 클래스 추가하기*/
 function addActiveClass() {
 	for(let i = 0; i < asideMoveBtn.length; i++) {
@@ -94,8 +88,11 @@ function reloadAddActiveClass() {
 	onChangeHomePageTitle()
 }
 
-
 /* 스파이스크롤 기능 */
+let asideMoveBtn = Array.from(document.querySelectorAll('.asideMoveBtn'))
+let menuMoveBtn = Array.from(document.querySelectorAll('.menuMoveBtn'))
+let index = 0
+
 function OnClickPageMove (moveBtn) {
 	this.btn = moveBtn;
 	this.func = function () {
@@ -237,6 +234,8 @@ function onClickScrollTopBtn () {
 	})
 }
 onClickScrollTopBtn()
+
+
 
 
 window.addEventListener('click', function(e) {
