@@ -1,38 +1,40 @@
 @charset "utf-8";
 @import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css); 
 
-html {min-width:375px; background: #1c242c; font-size:0.625em; color:#fff}
-body { font-family:"pretendard",sans-serif; font-size:1.6rem; overflow:hidden;}
+html {background: #1c242c; font-size:0.625em; color:#fff}
+body {font-family:"pretendard",sans-serif; font-size:1.6rem; overflow:hidden;}
 * {box-sizing:border-box;}
 
 
 /* 공통 */
-.inner {width: 90%; min-width:324px; /* max-width:1600px; */ margin: 0 auto;}
+.inner {width: 90%; min-width:324px; margin: 0 auto;}
 .shadowText {color:#1c242c; text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;}
-.moblieText {display: none;}
+.mobileText {display: none;}
+button {background: transparent; border:none; font-family:"pretendard",sans-serif; cursor:pointer}
+
 
 /* header && fullMenu 공통 */
 .logo {width: 50px; height: 50px;}
 .logo a {display: block; width: 100%; height: 100%; line-height: 50px; font-size: 6rem; text-align: center;  background: #fff; border-radius:1px;}
 /* fullMenuBtn */
 #fullMenuBtn {position: fixed; top:20px; right:5%; width: 36px; height: 36px; overflow: hidden; z-index: 999;}
-#fullMenuBtn a {display: block; width: 100%; height: 100%;}
-#fullMenuBtn a span {position: absolute; left:0; width: 100%; height: 1px; background: #fff; transition: all 0.5s;}
-#fullMenuBtn a span:nth-child(1) {top:0px;}
-#fullMenuBtn a span:nth-child(2) {top:50%;}
-#fullMenuBtn a span:nth-child(3) {bottom:0px;}
-#fullMenuBtn a.active span:nth-child(1) {transform: rotate(-45deg) scaleX(0.75); transform-origin: 100% 0;}
-#fullMenuBtn a.active span:nth-child(2) {transform: rotate(45deg) scaleX(1.5); }
-#fullMenuBtn a.active span:nth-child(3) {transform: rotate(-45deg) scaleX(0.75) translateY(1px); transform-origin: 0 100%;}
+#fullMenuBtn button {display: block; width: 100%; height: 100%;}
+#fullMenuBtn button span {position: absolute; left:0; width: 100%; height: 1px; background: #fff; transition: all 0.5s;}
+#fullMenuBtn button span:nth-child(1) {top:0px;}
+#fullMenuBtn button span:nth-child(2) {top:50%;}
+#fullMenuBtn button span:nth-child(3) {bottom:0px;}
+#fullMenuBtn button.active span:nth-child(1) {transform: rotate(-45deg) scaleX(0.75); transform-origin: 100% 0;}
+#fullMenuBtn button.active span:nth-child(2) {transform: rotate(45deg) scaleX(1.5); }
+#fullMenuBtn button.active span:nth-child(3) {transform: rotate(-45deg) scaleX(0.75) translateY(1px); transform-origin: 0 100%;}
 /* header */
 header {position: fixed; display: flex; align-items: center; width: 100%; height: 80px; border-bottom:1px solid #fff; background: #1c242c; z-index: 200;}
 header ul {display: flex; justify-content: space-between; align-items: center; height: 100%;}
 header ul li {display: flex; justify-content: center; align-items: center;}
 header ul li a {display: block; width: 100%; height: 100%;}
 /* fullMenu */
-#fullMenu {position: fixed; top:0; right:-640px; transform: translateX(0); display: block; opacity:0; width: 100%; border-left:1px solid #fff; max-width: 660px; height: 100vh; background: #6f787a; z-index: 200; transition: all 0.9s;}
+#fullMenu {position: fixed; top:0; right:-660px; transform: translateX(0); display: block; opacity:0; width: 100%; border-left:1px solid #fff; max-width: 660px; height: 100vh; background: #6f787a; z-index: 200; transition: all 0.8s;}
 #fullMenu:before {content:''; position: absolute; top:79px; display: inline-block; width: 100%; height: 1px; background: #fff;}
-#fullMenu.active {transform: translateX(-640px); opacity:1;}
+#fullMenu.active {transform: translateX(-660px); opacity:1;}
 #fullMenu .fullMenuHead {width: 100%; height:80px; display: flex; justify-content: space-between; align-items: center;}
 #fullMenu .fullMenuHead li {height:50px}
 #fullMenu .moveBtnArea li {height: 70px; line-height: 70px;}
@@ -43,107 +45,108 @@ header ul li a {display: block; width: 100%; height: 100%;}
 
 /* main */
 main {overflow: hidden;}
-main .page {position: relative;}
-main .page .content {position: relative; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:55%;}
-.page.site {position: relative;}
-
-/* .page.site:before {content:''; position: absolute; top:15%; left:-20%; display:block; width: 200%; height: 70%; background: #26303a; opacity: 0.8;} */
-.page.site .content {display:flex; justify-content:space-between;}
-.page.site .content:before {content:''; position: absolute; top:-10%; left:-20%; display:block; width: 200%; height: 120%; background: #26303a; opacity: 0.8;} *
-.page.site .content > div { width: 60%; height: 100%;}
-
-.page.site .content figure {width:100%; height:100%; z-index: 100; overflow: hidden; box-shadow:rgba(0, 0, 0, 0.24) 0px 30px 30px;}
-.page.site .content figure > a {position: relative; display: block; height: 100%;}
-.page.site .content figure > a:before {content:''; position: absolute; top:0; left:0; width: 100%; height: 100%; display: block; visibility: hidden; opacity: 0;  background: #000; transition:all 0.3s}
-.page.site .content figure > a:hover::before {visibility: visible; opacity: 0.4;}
-.page.site .content figure  img {width:100%; height:100%; border-radius:2px; transition:0.5s}
-.page.site .content figure > a:hover img {transform: scale(1.03);}
-.page.site .content .message {position: relative; margin-top:1.25em; padding-left: 0.625em; font-size:1.6rem;}
-.page.site .content .textArea {position: relative; width:37%; padding:0 1.25em; display: flex; flex-flow: column; justify-content: center;}
-.page.site .content .textArea h3 {font-size:4rem;}
-.page.site .content .textArea h3 span {display:inline-block; margin-left:0.2em; font-size:2.6rem; font-weight: 500;}
-.page.site .content .textArea > li {margin-bottom: 1.25em;}
-.page.site .content .textArea li.info ul li {margin-bottom: 0.312em;}
-.page.site .content .textArea li.info ul li span {position:relative; display: inline-block; margin-left:0.8em; font-size:2rem; line-height:1.5;}
-.page.site .content .textArea li.info ul li span:before {content:''; position:absolute; top:14px; left:-0.6em; display:inline-block; width:6px; height:2px; background:#fff;}
-.page.site .content .textArea li.iconArea {margin-bottom:2.5em;}
-.page.site .content .textArea li.iconArea span {display:inline-block; width:50px; height:50px; border-radius:5px; overflow: hidden;}
-.page.site .content .textArea li.iconArea span img {display: block; width:100%; height:100%; border-radius:5px;}
-.page.site .content .textArea li.link a {display:inline-block; margin:0 0.625em; padding:1em 1.25em; border:1px solid #fff; border-radius:2px; font-size:1.6rem; font-weight:500; transition:0.1s}
-.page.site .content .textArea li.link span:hover a {color:#1c242c; background: #fff;}
+main article {position: relative;}
+main article .content {position: relative; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:55%;}
+article.site {position: relative;}
+article.site .content {display:flex; justify-content:space-between;}
+article.site .content:before {content:''; position: absolute; top:-10%; left:-20%; display:block; width: 200%; height: 120%; background: #26303a; opacity: 0.8;} *
+article.site .content > div { width: 60%; height: 100%;}
+article.site .content figure {width:100%; height:100%; z-index: 100; overflow: hidden; box-shadow:rgba(0, 0, 0, 0.24) 0px 30px 30px;}
+article.site .content figure > a {position: relative; display: block; height: 100%;}
+article.site .content figure > a:before {content:''; position: absolute; top:0; left:0; width: 100%; height: 100%; display: block; visibility: hidden; opacity: 0;  background: #000; transition:all 0.3s}
+article.site .content figure > a:hover::before {visibility: visible; opacity: 0.4;}
+article.site .content figure  img {width:100%; height:100%; border-radius:2px; transition:0.5s}
+article.site .content figure > a:hover img {transform: scale(1.03);}
+article.site .content .message {position: relative; margin-top:1.25em; padding-left: 0.625em; font-size:1.6rem;}
+article.site .content .textArea {position: relative; width:37%; padding:0 1.25em; display: flex; flex-flow: column; justify-content: center;}
+article.site .content .textArea h3 {font-size:4rem;}
+article.site .content .textArea h3 span {display:inline-block; margin-left:0.2em; font-size:2.6rem; font-weight: 500;}
+article.site .content .textArea > li {margin-bottom: 1.25em;}
+article.site .content .textArea li.info ul li {margin-bottom: 0.312em;}
+article.site .content .textArea li.info ul li span {position:relative; display: inline-block; margin-left:0.8em; font-size:2rem; line-height:1.5;}
+article.site .content .textArea li.info ul li span:before {content:''; position:absolute; top:14px; left:-0.6em; display:inline-block; width:6px; height:2px; background:#fff;}
+article.site .content .textArea li.iconArea {margin-bottom:2.5em;}
+article.site .content .textArea li.iconArea span {display:inline-block; width:50px; height:50px; border-radius:5px; overflow: hidden;}
+article.site .content .textArea li.iconArea span img {display: block; width:100%; height:100%; border-radius:5px;}
+article.site .content .textArea li.link a {display:inline-block; margin:0 0.625em; padding:1em 1.25em; border:1px solid #fff; border-radius:2px; font-size:1.6rem; font-weight:500; transition:0.1s}
+article.site .content .textArea li.link span:hover a {color:#1c242c; background: #fff;}
 
 /* page #home */
-.page#home .content {width: 100%; height:55%; display: flex; justify-content: center; align-items: center;}
-.page#home .content .rotateBox {position: relative; width: 90%; max-width: 600px; min-width: 360px; height: 40%; max-height: 300px; min-height:200px;}
-.page#home .content .rotateBox:before {content:''; position: absolute; top:119px; left:0; display: inline-block; width: 0%; height: 2px; background: #fff;}
-.page#home.change .rotateBox::before {width:100%;}
-.page#home.change .rotateBox::before {width:100%;  transition: width 6s; transition-delay: 0.7s;}
+article#home .content {width: 100%; height:55%; display: flex; justify-content: center; align-items: center;}
+article#home .content .rotateBox {position: relative; width: 90%; max-width: 600px; min-width: 360px; height: 40%; max-height: 300px; min-height:200px;}
+article#home .content .rotateBox:before {content:''; position: absolute; top:119px; left:0; display: inline-block; width: 0%; height: 2px; background: #fff;}
+article#home.change .rotateBox::before {width:100%; transition: width 6s; transition-delay: 0.7s;}
+article#home .content .rotateBox > div {position: absolute; top:0; left:0; width: 100%; height: 100%;}
 
-.page#home .content .rotateBox > div {position: absolute; top:0; left:0; width: 100%; height: 100%;}
-
-.page#home.change .item01 {transform: rotateX(0); opacity: 1; transform-origin: left 57%; animation: fadeOut 1s 6.5s ease-out forwards;}
+article#home.change .item01 {transform: rotateX(0); opacity: 1; transform-origin: left 57%; animation: fadeOut 1s 6.5s ease-out forwards;}
 @keyframes fadeOut {
     0%{opacity: 1; transform: rotateX(0)}
     80%{opacity: 0;}
     100%{opacity: 0; transform: rotateX(-90deg); display: none;}
 }
-.page#home .item02,
-.page#home .item02 h3,
-.page#home .item02 .bottomTextArea {visibility: hidden; opacity:0;}
 
-.page#home .item02,
-.page#home.change .item02 h3 {animation: firstFadeIn 1s 7.8s ease-out forwards;}
+article#home .item02,
+article#home .item02 h3,
+article#home .item02 .bottomTextArea {visibility: hidden; opacity:0;}
+
+article#home .item02,
+article#home.change .item02 h3 {animation: firstFadeIn 1s 7.8s ease-out forwards;}
 @keyframes firstFadeIn {
     0%{opacity: 0; visibility: visible;}
     100%{opacity: 1; visibility: visible;}
 }
-.page#home.change .item02 .bottomTextArea {animation: secondFadeIn 1s 8.8s ease-out forwards;}
+
+article#home.change .item02 .bottomTextArea {animation: secondFadeIn 1s 8.8s ease-out forwards;}
 @keyframes secondFadeIn {
     0%{opacity: 0; visibility: visible;}
     100%{opacity: 1; visibility: visible;}
 }
 
-.page#home .item02 > .bottomTextArea {margin-top: 2.5em; text-align: center;}
-.page#home .item02 > .bottomTextArea > li {margin-bottom: 3rem;}
-.page#home .item02 > .bottomTextArea .commonText {font-size: 2.8rem; line-height: 1.5;}
-.page#home .item02 > .bottomTextArea li.iconArea {display: flex; justify-content: center; line-height: 50px;}
-.page#home .item02 > .bottomTextArea li.iconArea > span {width: auto; font-size: 2.2rem; font-weight: 600;}
-.page#home .item02 > .bottomTextArea li.iconArea li {position: relative; display: inline-block; width: 50px; height: 50px; margin-left: 0.625em;}
-.page#home .item02 > .bottomTextArea li.iconArea li:nth-child(1) {background: url(../img/icon/html.png) no-repeat center/cover;}
-.page#home .item02 > .bottomTextArea li.iconArea li:nth-child(2) {background: url(../img/icon/css.png) no-repeat center/cover;}
-.page#home .item02 > .bottomTextArea li.iconArea li:nth-child(3) {background: url(../img/icon/js.png) no-repeat center/cover;}
-.page#home .item02 > .bottomTextArea li.iconArea li:nth-child(4) {background: url(../img/icon/react.webp) no-repeat center/cover;}
-.page#home .item02 > .bottomTextArea li.iconArea li:nth-child(5) {background: url(../img/icon/vscode.png) no-repeat center/cover;}
-.page#home .item02 > .bottomTextArea li.iconArea li > span {position: absolute; bottom:-90%;; left:15%; min-width: 50px; padding: 0 0.714em; height: 30px; line-height: 30px; display:none; background: #fff; color:#1c242c; font-size: 1.4rem}
-.page#home .item02 > .bottomTextArea li.iconArea li > span:before {content:''; position: absolute; top:-4px; left: 15%; display: inline-block; width: 10px; height: 10px; background: #fff; transform: rotate(45deg);}
-.page#home .item02 > .bottomTextArea li.iconArea li:hover span {display: block;}
-.page#home .item02 > .bottomTextArea li.tag span {display: inline-block; margin-right: 0.714em; font-size: 1.8rem; color:#fff; opacity: 0.8;}
+article#home .item02 > .bottomTextArea {margin-top: 2.5em; text-align: center;}
+article#home .item02 > .bottomTextArea > li {margin-bottom: 3rem;}
+article#home .item02 > .bottomTextArea .commonText {font-size: 2.8rem; line-height: 1.5;}
+article#home .item02 > .bottomTextArea li.iconArea {display: flex; justify-content: center; line-height: 50px;}
+article#home .item02 > .bottomTextArea li.iconArea > span {width: auto; font-size: 2.2rem; font-weight: 600;}
+article#home .item02 > .bottomTextArea li.iconArea li {position: relative; display: inline-block; width: 50px; height: 50px; margin-left: 0.625em;}
+article#home .item02 > .bottomTextArea li.iconArea li:nth-child(1) {background: url(../img/icon/html.png) no-repeat center/cover;}
+article#home .item02 > .bottomTextArea li.iconArea li:nth-child(2) {background: url(../img/icon/css.png) no-repeat center/cover;}
+article#home .item02 > .bottomTextArea li.iconArea li:nth-child(3) {background: url(../img/icon/js.png) no-repeat center/cover;}
+article#home .item02 > .bottomTextArea li.iconArea li:nth-child(4) {background: url(../img/icon/react.webp) no-repeat center/cover;}
+article#home .item02 > .bottomTextArea li.iconArea li:nth-child(5) {background: url(../img/icon/vscode.png) no-repeat center/cover;}
+article#home .item02 > .bottomTextArea li.iconArea li > span {position: absolute; bottom:-90%;; left:15%; min-width: 50px; padding: 0 0.714em; height: 30px; line-height: 30px; display:none; background: #fff; color:#1c242c; font-size: 1.4rem}
+article#home .item02 > .bottomTextArea li.iconArea li > span:before {content:''; position: absolute; top:-4px; left: 15%; display: inline-block; width: 10px; height: 10px; background: #fff; transform: rotate(45deg);}
+article#home .item02 > .bottomTextArea li.iconArea li:hover span {display: block;}
+article#home .item02 > .bottomTextArea li.tag span {display: inline-block; margin-right: 0.714em; font-size: 1.8rem; color:#fff; opacity: 0.8;}
 
-.page#home h1,
-.page#home h2,
-.page#home h3 {position: relative;  color:#fff; font-size: 10rem; font-weight: 700; text-align: center; letter-spacing: 3px; }
-.page#home h2 {letter-spacing: 6px;}
-.page#home h3 {letter-spacing: 1px;}
+article#home h1,
+article#home h2,
+article#home h3 {position: relative;  color:#fff; font-size: 10rem; font-weight: 700; text-align: center; letter-spacing: 3px; }
 
+article#home h2 {letter-spacing: 6px;}
+article#home h3 {letter-spacing: 1px;}
+
+article#footer .content {width:80%; height: auto; text-align: center;}
+article#footer p {margin-bottom:1em; line-height:2.4; font-size:2.4rem; font-weight:500;}
 /* aside */
 aside {position:fixed; top:50%; right:40px; transform:translateY(-50%); width: 8px;}
-aside .moveBtnArea li {position: relative; width: 100%; height: 8px; margin-bottom: 1em; font-size: 20px; cursor:pointer; border-radius: 50%;}
-aside .moveBtnArea li:before {content:''; position: absolute; top:0; left:0; width: 100%; height: 100%; display: block; border-radius:50%; background:#6f787a; transition: 0.2s;}
-aside .moveBtnArea li:hover:before {transform: scale(1.5)}
-aside .moveBtnArea li.active:before {transform: scale(1.2); opacity: 1; background-color: transparent; box-shadow: 0 0 0 2px #fff;}
-aside .moveBtnArea li a {position:absolute; top:-75%; display: inline-block; visibility: hidden; opacity: 0; width: 2000%; min-width: 50px; max-width: 280px; line-height: 25px; padding-left: 30px; transition: 0.3s; }
-aside .moveBtnArea li:hover a {visibility: visible; opacity: 1;}
+aside .asideBtnArea li {position: relative; width: 100%; height: 8px; margin-bottom: 1em; font-size: 20px; cursor:pointer; border-radius: 50%;}
+aside .asideBtnArea li:before {content:''; position: absolute; top:0; left:0; width: 100%; height: 100%; display: block; border-radius:50%; background:#6f787a; transition: 0.2s;}
+aside .asideBtnArea li:hover:before {transform: scale(1.5)}
+aside .asideBtnArea li.active:before {transform: scale(1.2); opacity: 1; background-color: transparent; box-shadow: 0 0 0 2px #fff;}
+aside .asideBtnArea li button {position:absolute; top:-75%; display: inline-block; visibility: hidden; opacity: 0; width: 2000%; min-width: 50px; max-width: 280px; line-height: 25px; padding-left: 30px; transition: 0.3s; }
+aside .asideBtnArea li:hover button {visibility: visible; opacity: 1;}
 
 
 /* scroll */
-#scroll {position: fixed; bottom:20px; left:50%; transform:translateX(-50%); width: 40px; height: 70px; color:#fff; }
+#scroll {position: fixed; bottom:20px; left:50%; transform:translateX(-50%); width: 40px; height: 70px;}
 #scroll > div {position: absolute; top:0; left:0; display: block; width: 100%; height: 100%; text-align: center; font-size: 1.4rem; transition: all 0.2s 0.2s}
-#scroll > div a {display: block; height: 100%;}
-#scroll > div a span {display: inline-block;}
-#scroll > div a .text {position: absolute; left:0; width: 100%; height: 30px; line-height: 30px;}
-#scroll > div a .icon {position: absolute; left:0; width: 40px; height: 40px;}
+#scroll > div button {display: block; height: 100%; color:#fff; }
+#scroll > div button span {display: inline-block;}
+#scroll > div button .text {position: absolute; left:0; width: 100%; height: 30px; line-height: 30px;}
+#scroll > div button .icon {position: absolute; left:0; width: 40px; height: 40px;}
 
-#scroll div.scrollDown a {cursor:unset;}
+#scroll div.scrollDown button {cursor:unset;}
+#scroll div.scrollDown button .text {top:0;}
 #scroll div.scrollDown .icon {bottom:0}
 #scroll div.scrollDown .icon:before {content:''; position: absolute; left:50%; display: inline-block; width: 14px; height: 14px; border-left:2px solid #fff; border-bottom:2px solid #fff; animation: scrollDown 1.6s infinite; opacity: 0.7;}
 @keyframes scrollDown {
@@ -153,14 +156,11 @@ aside .moveBtnArea li:hover a {visibility: visible; opacity: 1;}
 }
 
 #scroll div.scrollTop {font-size: 1.5rem;}
+#scroll div.scrollTop .text {bottom:0;}
+#scroll div.scrollTop .icon {top:0;}
 #scroll div.scrollTop .icon:before {content:''; position: absolute; top:38%; left:50%; transform:translate(-50%,-50%); display: inline-block; width: 14px; height: 14px; border-left:4px solid #1c242c; border-bottom:4px solid #1c242c; transform: translate(-50%, 0) rotate(135deg);}
 #scroll div.scrollTop .icon:after {content:''; position: absolute; top:50%; left:50%; transform:translate(-50%,-50%); display: inline-block; width: 36px; height: 36px; background: #fff; border-radius:50%; z-index: -1;}
-#scroll div.scrollTop .text {bottom:0;}
+
 #scroll div.show {visibility: visible; opacity: 1;}
 #scroll div.hide {visibility: hidden; opacity: 0;}
 
-
-/* footer */
-#footer {background:url(../img/homeBg_modify.png) no-repeat center/cover;} 
-#footer .content {width:80%; text-align: center;}
-#footer p {margin-bottom:1em; line-height:2.4; font-size:2.4rem; font-weight:500;}
