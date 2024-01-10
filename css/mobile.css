@@ -25,17 +25,24 @@
     article#footer p {font-size:2rem;}
 
     #scroll {bottom:10px;}
-    #scroll > div a .text {display: none;}
-
-
+    #scroll > div button .text {display: none;}
 }
 
-@media screen and (max-width:600px) {
+@media screen and (min-width:376px) and (max-width:700px) {
     .webText {display: none;}
-    .moblieText {display: block;}
+    .mobileText {display: block;}
+
+    .logo {width: 40px; height: 40px;}
+    .logo a {line-height: 40px; font-size: 4.8rem;}
+
+    #fullMenuBtn {top:20px; width: 30px; height: 30px; }
+    header {height: 70px}
 
     #fullMenu {right:-400px; max-width: 400px;}
+    #fullMenu:before {top:69px}
     #fullMenu.active {transform: translateX(-400px);}
+    #fullMenu .fullMenuHead {height: 70px;}
+    #fullMenu .fullMenuHead li {height: 40px;}
 
     main article.site .content {top:55%; flex-direction: column; align-self:center; justify-content: center; height:80%;}
     article.site .content:before {top:-20px; height: calc(100% + 20px);}
@@ -62,9 +69,65 @@
     article#home .item02 > .bottomTextArea .commonText {font-size: 2.4rem;}
     article#home .item02 > .bottomTextArea li.iconArea > span {margin-right: 0.555em; font-size: 1.8rem; font-weight: 600;}
     article#home .item02 > .bottomTextArea li.iconArea li {margin-left: 0;}
-    article#footer p {font-size:1.6rem;}
+    article#footer p {font-size:1.8rem;}
+    article#footer p span {display: inline;}
 
-    #scroll {bottom:10px;}
-    #scroll > div a .text {display: none;}
+    #scroll {bottom:0px;}
+    #scroll > div button .text {display: none;}
+    .asideBtnArea {visibility: hidden;}
+}
+
+
+@media screen and (max-width:375px) {
+    .webText {display: none;}
+    .mobileText {display: block;}
+
+    .logo {width: 40px; height: 40px;}
+    .logo a {line-height: 40px; font-size: 4.8rem;}
+
+    #fullMenuBtn {top:20px; width: 30px; height: 30px; }
+    header {height: 70px}
+
+    #fullMenu {right:-400px; max-width: 400px;}
+    #fullMenu:before {top:69px}
+    #fullMenu.active {transform: translateX(-400px);}
+    #fullMenu .fullMenuHead {height: 70px;}
+    #fullMenu .fullMenuHead li {height: 40px;}
+    #fullMenu .moveBtnArea li a {font-size: 1.6rem;}
+
+
+    main article.site .content {top:55%; flex-direction: column; align-self:center; justify-content: center; height:80%;}
+    article.site .content:before {top:-20px; height: calc(100% + 20px);}
+    article.site .content > div {width: 100%; margin: 0 auto;}
+    article.site .content .message {display: none;}
+    article.site .content .textArea {align-self: center; width: 100%; text-align: center; margin-top: 1.25em; padding: 0;}
+    article.site .content .textArea h3 {font-size: 2.4rem;}
+    article.site .content .textArea h3 span {font-size: 1.8rem;}
+    
+    article.site .content .textArea li.info ul li span {display: unset; font-size: 1.5rem;}
+    article.site .content .textArea li.info ul li span:before {top:8px}
+    article.site .content .textArea li.iconArea {margin-bottom: 1.25em;}
+    article.site .content .textArea li.iconArea span {width:40px; height:40px;}
+    article.site .content .textArea li.link span a {font-size: 1.3rem;}
+  
+    article#home .content {top:45%; width:300px;}
+    article#home .content .rotateBox {width: 100%;}
+    article#home .content .rotateBox:before {top:62px;}
+    article#home h1,
+    article#home h2,
+    article#home h3 {font-size: 5rem; text-align: center; letter-spacing: 0px;}
+    article#home h1 {letter-spacing: 2px;}
+    article#home h2 {letter-spacing: 3px;}
+    article#home h3 {letter-spacing: 0px;}
+    article#home.change .item01 {transform-origin: left 71px;}
+    article#home .item02 > .bottomTextArea {margin-top: 1.25em;}
+    article#home .item02 > .bottomTextArea .commonText {font-size: 2rem;}
+    article#home .item02 > .bottomTextArea li.iconArea > span {margin-right: 0.555em; font-size: 1.6rem; font-weight: 600;}
+    article#home .item02 > .bottomTextArea li.iconArea li {width: 40px; height: 40px; margin-left: 0;}
+    article#footer p {font-size:1.4rem;}
+    article#footer p span {display: inline;}
+
+    #scroll {bottom:0px;}
+    #scroll > div button .text {display: none;}
     .asideBtnArea {visibility: hidden;}
 }
