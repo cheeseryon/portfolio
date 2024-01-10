@@ -58,7 +58,6 @@ article.site .content figure > a:before {content:''; position: absolute; top:0; 
 article.site .content figure > a:hover::before {visibility: visible; opacity: 0.4;}
 article.site .content figure  img {width:100%; height:100%; border-radius:2px; transition:0.5s}
 article.site .content figure > a:hover img {transform: scale(1.03);}
-article.site .content .message {position: relative; margin-top:1.25em; padding-left: 0.625em; font-size:1.6rem;}
 article.site .content .textArea {position: relative; width:37%; padding:0 1.25em; display: flex; flex-flow: column; justify-content: center;}
 article.site .content .textArea h3 {font-size:4rem;}
 article.site .content .textArea h3 span {display:inline-block; margin-left:0.2em; font-size:2.6rem; font-weight: 500;}
