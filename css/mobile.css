@@ -5,24 +5,24 @@
     #fullMenu {right:-400px; max-width: 400px;}
     #fullMenu.active {transform: translateX(-400px);}
 
-    main .page.site .content {top:55%; flex-direction: column; align-self:center; justify-content: center; height:80%;}
-    .page.site .content:before {top:-20px; height: calc(100% + 20px);}
-    .page.site .content > div {width: 80%; margin: 0 auto;}
-    .page.site .content .message {display: none;}
-    .page.site .content .textArea {align-self: center; width: 100%; text-align: center; margin-top: 1.25em;}
-    .page.site .content .textArea h3 {font-size: 3.4rem;}
-    .page.site .content .textArea li.iconArea {margin-bottom: 1.25em;}
-    .page.site .content .textArea li.link span a {font-size: 1.4rem;}
+    main article.site .content {top:55%; flex-direction: column; align-self:center; justify-content: center; height:80%;}
+    article.site .content:before {top:-20px; height: calc(100% + 20px);}
+    article.site .content > div {width: 80%; margin: 0 auto;}
+    article.site .content .message {display: none;}
+    article.site .content .textArea {align-self: center; width: 100%; text-align: center; margin-top: 1.25em;}
+    article.site .content .textArea h3 {font-size: 3.4rem;}
+    article.site .content .textArea li.iconArea {margin-bottom: 1.25em;}
+    article.site .content .textArea li.link span a {font-size: 1.4rem;}
 
-    .page#home .content {top:45%; width:540px;}
-    .page#home .content .rotateBox:before {top:96px;}
-    .page#home h1,
-    .page#home h2,
-    .page#home h3 {font-size: 8rem;}
-    .page#home.change .item01 {transform-origin: left 95px;}
-    .page#home .item02 > .bottomTextArea {margin-top: 1.25em;}
-    .page#home .item02 > .bottomTextArea .commonText {font-size: 2.4rem;}
-    .page#footer p {font-size:2rem;}
+    article#home .content {top:45%; width:540px;}
+    article#home .content .rotateBox:before {top:96px;}
+    article#home h1,
+    article#home h2,
+    article#home h3 {font-size: 8rem;}
+    article#home.change .item01 {transform-origin: left 95px;}
+    article#home .item02 > .bottomTextArea {margin-top: 1.25em;}
+    article#home .item02 > .bottomTextArea .commonText {font-size: 2.4rem;}
+    article#footer p {font-size:2rem;}
 
     #scroll {bottom:10px;}
     #scroll > div a .text {display: none;}
@@ -37,32 +37,32 @@
     #fullMenu {right:-400px; max-width: 400px;}
     #fullMenu.active {transform: translateX(-400px);}
 
-    main .page.site .content {top:55%; flex-direction: column; align-self:center; justify-content: center; height:80%;}
-    .page.site .content:before {top:-20px; height: calc(100% + 20px);}
-    .page.site .content > div {width: 100%; margin: 0 auto;}
-    .page.site .content .message {display: none;}
-    .page.site .content .textArea {align-self: center; width: 100%; text-align: center; margin-top: 1.25em; padding: 0;}
-    .page.site .content .textArea h3 {font-size: 2.8rem;}
+    main article.site .content {top:55%; flex-direction: column; align-self:center; justify-content: center; height:80%;}
+    article.site .content:before {top:-20px; height: calc(100% + 20px);}
+    article.site .content > div {width: 100%; margin: 0 auto;}
+    article.site .content .message {display: none;}
+    article.site .content .textArea {align-self: center; width: 100%; text-align: center; margin-top: 1.25em; padding: 0;}
+    article.site .content .textArea h3 {font-size: 2.8rem;}
     
-    .page.site .content .textArea li.info ul li span {display: unset; font-size: 1.5rem;}
-    .page.site .content .textArea li.info ul li span:before {top:8px}
-    .page.site .content .textArea li.iconArea {margin-bottom: 1.25em;}
-    .page.site .content .textArea li.iconArea span {width:40px; height:40px;}
-    .page.site .content .textArea li.link span a {font-size: 1.3rem;}
+    article.site .content .textArea li.info ul li span {display: unset; font-size: 1.5rem;}
+    article.site .content .textArea li.info ul li span:before {top:8px}
+    article.site .content .textArea li.iconArea {margin-bottom: 1.25em;}
+    article.site .content .textArea li.iconArea span {width:40px; height:40px;}
+    article.site .content .textArea li.link span a {font-size: 1.3rem;}
   
-    .page#home .content {top:45%; width:370px;}
-    .page#home .content .rotateBox {width: 100%;}
-    .page#home .content .rotateBox:before {top:70px;}
-    .page#home h1,
-    .page#home h2,
-    .page#home h3 {font-size: 6rem; text-align: center;}
-    .page#home h3 {letter-spacing: 0px;}
-    .page#home.change .item01 {transform-origin: left 71px;}
-    .page#home .item02 > .bottomTextArea {margin-top: 1.25em;}
-    .page#home .item02 > .bottomTextArea .commonText {font-size: 2.4rem;}
-    .page#home .item02 > .bottomTextArea li.iconArea > span {margin-right: 0.555em; font-size: 1.8rem; font-weight: 600;}
-    .page#home .item02 > .bottomTextArea li.iconArea li {margin-left: 0;}
-    .page#footer p {font-size:1.6rem;}
+    article#home .content {top:45%; width:370px;}
+    article#home .content .rotateBox {width: 100%;}
+    article#home .content .rotateBox:before {top:70px;}
+    article#home h1,
+    article#home h2,
+    article#home h3 {font-size: 6rem; text-align: center;}
+    article#home h3 {letter-spacing: 0px;}
+    article#home.change .item01 {transform-origin: left 71px;}
+    article#home .item02 > .bottomTextArea {margin-top: 1.25em;}
+    article#home .item02 > .bottomTextArea .commonText {font-size: 2.4rem;}
+    article#home .item02 > .bottomTextArea li.iconArea > span {margin-right: 0.555em; font-size: 1.8rem; font-weight: 600;}
+    article#home .item02 > .bottomTextArea li.iconArea li {margin-left: 0;}
+    article#footer p {font-size:1.6rem;}
 
     #scroll {bottom:10px;}
     #scroll > div a .text {display: none;}
