@@ -88,6 +88,7 @@ function reloadAddActiveClass() {
 	onChangeHomePageTitle()
 }
 
+
 /* 스파이스크롤 기능 */
 let asideMoveBtn = Array.from(document.querySelectorAll('.asideMoveBtn'))
 let menuMoveBtn = Array.from(document.querySelectorAll('.menuMoveBtn'))
@@ -123,8 +124,6 @@ function OnClickPageMove (moveBtn) {
 				}
 			})
 		}
-
-		
 	}
 }
 
@@ -135,7 +134,7 @@ asideBtnOnClick.func()
 fullMenuBtnOnClick.func()
 
 
-/* 휠 || 터치로 한페이지씩 이동 */
+/* 페이지 이동 기능 */
 let scrolling = true;
 function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
 	this.ifInLeftData = touchStartOrDeltaY,
@@ -174,12 +173,16 @@ function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
 	}
 }
 
+
+/* 마우스 휠 사용시 페이지 이동 */
 function handelMouseWheelEvent (e) {
 	e.preventDefault()
 	let mouseWheelPageMove = new PageMove(e.deltaY , 0)
 	mouseWheelPageMove.move(e)
 }
 
+
+/* 터치 사용시 페이지 이동 */
 let startY;
 window.addEventListener('touchstart', function(e) {
 	startY = e.changedTouches[0].clientY 
@@ -229,6 +232,7 @@ function scrollToTop(e) {
 function onClickScrollTopBtn () {
 	document.querySelector(".scrollTop > button").addEventListener("click", (e) => {
 		scrollToTop(e)
+
 		addActiveClass()
 		scrollToTopIconShow()
 	})

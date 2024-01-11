@@ -113,6 +113,7 @@ article#home .item02 > .bottomTextArea li.iconArea li:nth-child(2) {background: 
 article#home .item02 > .bottomTextArea li.iconArea li:nth-child(3) {background: url(../img/icon/js.png) no-repeat center/cover;}
 article#home .item02 > .bottomTextArea li.iconArea li:nth-child(4) {background: url(../img/icon/react.webp) no-repeat center/cover;}
 article#home .item02 > .bottomTextArea li.iconArea li:nth-child(5) {background: url(../img/icon/vscode.png) no-repeat center/cover;}
+article#home .item02 > .bottomTextArea li.iconArea li:nth-child(6) {background: url(../img/icon/git.png) no-repeat center/cover;}
 article#home .item02 > .bottomTextArea li.iconArea li > span {position: absolute; bottom:-90%;; left:15%; min-width: 50px; padding: 0 0.714em; height: 30px; line-height: 30px; display:none; background: #fff; color:#1c242c; font-size: 1.4rem}
 article#home .item02 > .bottomTextArea li.iconArea li > span:before {content:''; position: absolute; top:-4px; left: 15%; display: inline-block; width: 10px; height: 10px; background: #fff; transform: rotate(45deg);}
 article#home .item02 > .bottomTextArea li.iconArea li:hover span {display: block;}
@@ -126,9 +127,10 @@ article#home h2 {letter-spacing: 6px;}
 article#home h3 {letter-spacing: 1px;}
 
 article#footer .content {width:80%; height: auto; text-align: center;}
-article#footer p {line-height:3; font-size:2.4rem; font-weight:500;}
+article#footer p {margin-bottom: 2em; line-height:3; font-size:2.4rem; font-weight:500;}
 article#footer p span {display: block;}
-
+article#footer .link a {display:inline-block; margin:0 0.625em; padding:1em 1.25em; border:1px solid #fff; border-radius:2px; font-size:1.6rem; font-weight:500; transition:0.1s}
+article#footer .link span:hover a {color:#1c242c; background: #fff;}
 
 /* aside */
 aside {position:fixed; top:50%; right:40px; transform:translateY(-50%); width: 8px;}
