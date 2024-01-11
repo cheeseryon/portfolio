@@ -219,27 +219,32 @@ scrollToTopIconShow()
 
 
 /* 맨위로 이동 */
-function scrollToTop(e) {
-	e.preventDefault()
-	index = 0;
-	window.scrollTo({top:0, behavior:"smooth"})
-	for(let i = 0; i < pageSection.length; i++) {
-		pageSection[i].classList.remove("active")
+function ScrollToTop(clickBtn) {
+	this.btn = clickBtn
+	this.func = function() {
+		this.btn.addEventListener("click", (e) => {
+			e.preventDefault()
+			index = 0;
+			window.scrollTo({top:0, behavior:"smooth"})
+			for(let i = 0; i < pageSection.length; i++) {
+				pageSection[i].classList.remove("active")
+			}
+			pageSection[0].classList.add("active")
+
+			addActiveClass()
+			scrollToTopIconShow()
+		})
 	}
-	pageSection[0].classList.add("active")
 }
 
-function onClickScrollTopBtn () {
-	document.querySelector(".scrollTop > button").addEventListener("click", (e) => {
-		scrollToTop(e)
+let logo = document.querySelector(".logo a")
+let arrowBtn = document.querySelector(".scrollTop > button")
 
-		addActiveClass()
-		scrollToTopIconShow()
-	})
-}
-onClickScrollTopBtn()
+let onClickLogoScrollToTop = new ScrollToTop(logo)
+let onClickArrowScrollToTop = new ScrollToTop(arrowBtn)
 
-
+onClickLogoScrollToTop.func()
+onClickArrowScrollToTop.func()
 
 
 window.addEventListener('click', function(e) {
