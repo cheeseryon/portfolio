@@ -46,7 +46,7 @@ header ul li a {display: block; width: 100%; height: 100%;}
 
 /* main */
 main {overflow: hidden;}
-main article {position: relative;}
+main article {position: relative; height: 100vh;}
 main article .content {position: relative; top:50%; left:50%; transform:translate(-50%,-50%); width:100%; height:55%;}
 article.site {position: relative;}
 article.site .content {display:flex; justify-content:space-between;}

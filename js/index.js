@@ -1,13 +1,3 @@
-/* page height 적용 */
-let pageSection = Array.from(document.querySelectorAll('article'))
-function sectionHeightCalc() {
-	pageSection.forEach((item) => {
-		item.style.height = window.innerHeight + "px"
-	})
-}
-sectionHeightCalc()
-
-
 /* imgArea height 조절 */
 function imgAreaHeightCalc() {
 	let imgArea = document.querySelectorAll('.imgArea')
@@ -61,11 +51,12 @@ function onClickFullMenuHide (e) {
 	}
 }
 
+let page = Array.from(document.querySelectorAll('article'))
 
 /* 스파이 스크롤 버튼에 active 클래스 추가하기*/
 function addActiveClass() {
 	for(let i = 0; i < asideMoveBtn.length; i++) {
-		if(pageSection[i].classList.contains('active')) {
+		if(page[i].classList.contains('active')) {
 			asideMoveBtn[i].classList.add('active')
 			menuMoveBtn[i].classList.add('active')
 		} else {
@@ -78,12 +69,12 @@ function addActiveClass() {
 
 /* 새로고침시 버튼에 active클래스 추가 */
 function reloadAddActiveClass() {
-	let filteredPage = pageSection.filter((item)=> 
+	let filteredPage = page.filter((item)=> 
 		item.getBoundingClientRect().top <= 0 && item.getBoundingClientRect().bottom > 0
 	)
 	index = filteredPage[0].getAttribute('data-pageIdx')
 
-	pageSection[index].classList.add('active')
+	page[index].classList.add('active')
 	addActiveClass()
 	onChangeHomePageTitle()
 }
@@ -102,17 +93,17 @@ function OnClickPageMove (moveBtn) {
 				e.preventDefault()
 				index = this.getAttribute('data-btnIdx')
 
-				let filteredPage = pageSection.filter((item,idx) => idx < index)
+				let filteredPage = page.filter((item,idx) => idx < index)
 				let totalHeight = filteredPage.reduce((accumulator,currentHeight) => {
 					return accumulator + currentHeight.clientHeight
 				}, 0)
 
 				window.scrollTo({top: totalHeight , behavior:"smooth"}); 
 
-				for(let i = 0; i < pageSection.length; i ++ ){
-					pageSection[i].classList.remove('active')
+				for(let i = 0; i < page.length; i ++ ){
+					page[i].classList.remove('active')
 				}
-				pageSection[index].classList.add('active')
+				page[index].classList.add('active')
 
 				addActiveClass()
 				scrollToTopIconShow()	
@@ -142,7 +133,7 @@ function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
 	this.move = function(e) {
 		if(scrolling) {
 			if(this.ifInLeftData > this.ifInRightData){
-				if(index < pageSection.length - 1) {
+				if(index < page.length - 1) {
 					index ++
 				}
 			} else if (this.ifInLeftData < this.ifInRightData) {
@@ -150,17 +141,17 @@ function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
 				index --
 			}
 
-			let filteredPage = pageSection.filter((item , idx) => idx < index)
+			let filteredPage = page.filter((item , idx) => idx < index)
 			let totalHeight = filteredPage.reduce((accumulator,currentHeight) => {
 				return accumulator + currentHeight.clientHeight
 			}, 0)
 	
 			window.scrollTo({top: totalHeight , behavior : "smooth"}); 
 	
-			for(let i = 0; i < pageSection.length; i ++) {
-				pageSection[i].classList.remove('active')
+			for(let i = 0; i < page.length; i ++) {
+				page[i].classList.remove('active')
 			}
-			pageSection[index].classList.add('active')
+			page[index].classList.add('active')
 	
 			scrolling = false;
 			setTimeout(() => {
@@ -201,9 +192,9 @@ window.addEventListener('touchend', function(e) {
 /* top 이동 아이콘 show && hide */
 function scrollToTopIconShow() {
 	let scrollElem = document.querySelectorAll("#scroll div")
-	let pageLastNum = pageSection.length - 1
+	let pageLastNum = page.length - 1
 
-	if(pageSection[pageLastNum].classList.contains("active")) {
+	if(page[pageLastNum].classList.contains("active")) {
 		scrollElem[0].classList.add("hide")
 		scrollElem[0].classList.remove("show")
 		scrollElem[1].classList.add("show")
@@ -226,10 +217,10 @@ function ScrollToTop(clickBtn) {
 			e.preventDefault()
 			index = 0;
 			window.scrollTo({top:0, behavior:"smooth"})
-			for(let i = 0; i < pageSection.length; i++) {
-				pageSection[i].classList.remove("active")
+			for(let i = 0; i < page.length; i++) {
+				page[i].classList.remove("active")
 			}
-			pageSection[0].classList.add("active")
+			page[0].classList.add("active")
 
 			addActiveClass()
 			scrollToTopIconShow()
