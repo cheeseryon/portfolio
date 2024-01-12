@@ -28,7 +28,7 @@ onChangeHomePageTitle()
 let fullMenuShowBtn = document.querySelector('#fullMenuBtn > button')
 let fullMenu = document.querySelector('#fullMenu')
 
-/* 버튼 클릭시 열고 닫기 */
+/* fullMenuButton 클릭시 열고 닫기 */
 function onClickFullMenuToggle () {
 	fullMenuShowBtn.addEventListener("click" , function(e) {
 		e.preventDefault()
@@ -51,33 +51,67 @@ function onClickFullMenuHide (e) {
 	}
 }
 
+
+/* 페이지 이동 기능 */
 let page = Array.from(document.querySelectorAll('article'))
+let scrolling = true;
+function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
+	this.ifInLeftData = touchStartOrDeltaY,
+	this.ifInRightData = touchEndOrNumberZero,
+	this.move = function(e) {
+		if(scrolling) {
+			if(this.ifInLeftData > this.ifInRightData){
+				if(index < page.length - 1) {
+					index ++
+				}
+			} else if (this.ifInLeftData < this.ifInRightData) {
+				if(index > 0)
+				index --
+			}
 
-/* 스파이 스크롤 버튼에 active 클래스 추가하기*/
-function addActiveClass() {
-	for(let i = 0; i < asideMoveBtn.length; i++) {
-		if(page[i].classList.contains('active')) {
-			asideMoveBtn[i].classList.add('active')
-			menuMoveBtn[i].classList.add('active')
-		} else {
-			asideMoveBtn[i].classList.remove('active')
-			menuMoveBtn[i].classList.remove('active')
+			let filteredPage = page.filter((item , idx) => idx < index)
+			let totalHeight = filteredPage.reduce((accumulator,currentHeight) => {
+				return accumulator + currentHeight.clientHeight
+			}, 0)
+	
+			window.scrollTo({top: totalHeight , behavior : "smooth"}); 
+	
+			for(let i = 0; i < page.length; i ++) {
+				page[i].classList.remove('active')
+			}
+			page[index].classList.add('active')
+	
+			scrolling = false;
+			setTimeout(() => {
+				scrolling = true
+			}, 600)
 		}
-	} 
+	
+		scrollToTopIconShow()
+		onChangeHomePageTitle()
+	}
 }
 
-
-/* 새로고침시 버튼에 active클래스 추가 */
-function reloadAddActiveClass() {
-	let filteredPage = page.filter((item)=> 
-		item.getBoundingClientRect().top <= 0 && item.getBoundingClientRect().bottom > 0
-	)
-	index = filteredPage[0].getAttribute('data-pageIdx')
-
-	page[index].classList.add('active')
-	addActiveClass()
-	onChangeHomePageTitle()
+/* 마우스 휠 사용시 페이지 이동 */
+function handelMouseWheelEvent (e) {
+	e.preventDefault()
+	let mouseWheelPageMove = new PageMove(e.deltaY , 0) //pageMove 인스턴스
+	mouseWheelPageMove.move(e)
 }
+
+/* 터치 사용시 페이지 이동 */
+let startY
+window.addEventListener('touchstart', function(e) {
+	startY = e.changedTouches[0].clientY 
+})
+window.addEventListener('touchend', function(e) {
+	let endY = e.changedTouches[0].clientY 
+
+	if(startY > endY + 100 || startY < endY - 100) {
+		let touchPageMove = new PageMove(startY , endY) //pageMove 인스턴스
+		touchPageMove.move(e)
+	}
+})
 
 
 /* 스파이스크롤 기능 */
@@ -117,76 +151,34 @@ function OnClickPageMove (moveBtn) {
 		}
 	}
 }
-
 let asideBtnOnClick = new OnClickPageMove(asideMoveBtn)
 let fullMenuBtnOnClick = new OnClickPageMove(menuMoveBtn)
-
 asideBtnOnClick.func()
 fullMenuBtnOnClick.func()
 
-
-/* 페이지 이동 기능 */
-let scrolling = true;
-function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
-	this.ifInLeftData = touchStartOrDeltaY,
-	this.ifInRightData = touchEndOrNumberZero,
-	this.move = function(e) {
-		if(scrolling) {
-			if(this.ifInLeftData > this.ifInRightData){
-				if(index < page.length - 1) {
-					index ++
-				}
-			} else if (this.ifInLeftData < this.ifInRightData) {
-				if(index > 0)
-				index --
-			}
-
-			let filteredPage = page.filter((item , idx) => idx < index)
-			let totalHeight = filteredPage.reduce((accumulator,currentHeight) => {
-				return accumulator + currentHeight.clientHeight
-			}, 0)
-	
-			window.scrollTo({top: totalHeight , behavior : "smooth"}); 
-	
-			for(let i = 0; i < page.length; i ++) {
-				page[i].classList.remove('active')
-			}
-			page[index].classList.add('active')
-	
-			scrolling = false;
-			setTimeout(() => {
-				scrolling = true
-			}, 600)
+/* 스파이 스크롤 버튼에 active 클래스 추가하기*/
+function addActiveClass() {
+	for(let i = 0; i < asideMoveBtn.length; i++) {
+		if(page[i].classList.contains('active')) {
+			asideMoveBtn[i].classList.add('active')
+			menuMoveBtn[i].classList.add('active')
+		} else {
+			asideMoveBtn[i].classList.remove('active')
+			menuMoveBtn[i].classList.remove('active')
 		}
-	
-		scrollToTopIconShow()
-		onChangeHomePageTitle()
-	}
+	} 
 }
+/* 새로고침시 버튼에 active클래스 추가 */
+function reloadAddActiveClass() {
+	let filteredPage = page.filter((item)=> 
+		item.getBoundingClientRect().top <= 0 && item.getBoundingClientRect().bottom > 0
+	)
+	index = filteredPage[0].getAttribute('data-pageIdx')
 
-
-/* 마우스 휠 사용시 페이지 이동 */
-function handelMouseWheelEvent (e) {
-	e.preventDefault()
-	let mouseWheelPageMove = new PageMove(e.deltaY , 0)
-	mouseWheelPageMove.move(e)
+	page[index].classList.add('active')
+	addActiveClass()
+	onChangeHomePageTitle()
 }
-
-
-/* 터치 사용시 페이지 이동 */
-let startY;
-window.addEventListener('touchstart', function(e) {
-	startY = e.changedTouches[0].clientY 
-})
-
-window.addEventListener('touchend', function(e) {
-	let endY = e.changedTouches[0].clientY 
-
-	if(startY > endY + 100 || startY < endY - 100) {
-		let touchPageMove = new PageMove(startY , endY)
-		touchPageMove.move(e)
-	}
-})
 
 
 /* top 이동 아이콘 show && hide */
@@ -254,7 +246,6 @@ window.addEventListener('load' , function () {
 ) 
 
 window.addEventListener('resize' , function () {
-	sectionHeightCalc()
 	imgAreaHeightCalc()
   }
 ) 
