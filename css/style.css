@@ -51,12 +51,10 @@ main article .content {position: relative; top:50%; left:50%; transform:translat
 article.site {position: relative;}
 article.site .content {display:flex; justify-content:space-between;}
 article.site .content:before {content:''; position: absolute; top:-10%; left:-20%; display:block; width: 200%; height: 120%; background: #26303a; opacity: 0.8;} *
-article.site .content > div { width: 60%; height: 100%;}
-article.site .content figure {width:100%; height:100%; z-index: 100; overflow: hidden; box-shadow:rgba(0, 0, 0, 0.24) 0px 30px 30px;}
+article.site .content > div {width: 60%; height: 100%;}
+article.site .content figure {position: relative; width:100%; height:100%; z-index: 100; overflow: hidden;  border-radius:2px; box-shadow:rgba(0, 0, 0, 0.24) 0px 30px 30px;}
 article.site .content figure > a {position: relative; display: block; height: 100%;}
-article.site .content figure > a:before {content:''; position: absolute; top:0; left:0; width: 100%; height: 100%; display: block; visibility: hidden; opacity: 0;  background: #000; transition:all 0.3s}
-article.site .content figure > a:hover::before {visibility: visible; opacity: 0.4;}
-article.site .content figure  img {width:100%; height:100%; border-radius:2px; transition:0.5s}
+article.site .content figure  img {width:100%; height:100%; transition: transform 0.5s}
 article.site .content figure > a:hover img {transform: scale(1.03);}
 article.site .content .textArea {position: relative; width:37%; padding:0 1.25em; display: flex; flex-flow: column; justify-content: center;}
 article.site .content .textArea h3 {font-size:4rem;}
