@@ -87,3 +87,10 @@ caption,
     display : block;
     clear : both;
 }
+
+button {
+    border:none;
+    background: transparent;
+    font-family: inherit;
+    cursor:pointer
+}

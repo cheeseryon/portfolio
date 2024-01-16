@@ -1,6 +1,6 @@
 /* imgArea height 조절 */
 function imgAreaHeightCalc() {
-	let imgArea = document.querySelectorAll('.imgArea')
+	let imgArea = document.querySelectorAll('.cont-img-area')
 	if (window.matchMedia("(min-width: 375px) and (max-width: 800px)").matches) {
 			imgArea.forEach((item) => {
 				item.style.height = item.clientWidth * 0.75 + "px"
@@ -25,35 +25,35 @@ onChangeHomePageTitle()
 
 
 /* 메뉴창 열고 닫기 */
-let fullMenuShowBtn = document.querySelector('#fullMenuBtn > button')
-let fullMenu = document.querySelector('#fullMenu')
+let hamburgerMenuBtn = document.querySelector('#hamburger-menu-btn > button')
+let hamburgerMenu = document.querySelector('#hamburger-menu')
 
-/* fullMenuButton 클릭시 열고 닫기 */
-function onClickFullMenuToggle () {
-	fullMenuShowBtn.addEventListener("click" , function(e) {
+/* hamburgerMenuBtn 클릭시 열고 닫기 */
+function onClickHamburgerMenuToggle () {
+	hamburgerMenuBtn.addEventListener("click" , function(e) {
 		e.preventDefault()
 		 	if(this.classList.contains("active")) {
 				this.classList.remove("active") 
-				fullMenu.classList.remove("active") 
+				hamburgerMenu.classList.remove("active") 
 			} else {
 				this.classList.add("active") 
-				fullMenu.classList.add("active") 
+				hamburgerMenu.classList.add("active") 
 			}
 	})
 }
-onClickFullMenuToggle()
+onClickHamburgerMenuToggle()
 
-/* fullMenu가 아닌 곳 클릭시 닫기 */
-function onClickFullMenuHide (e) {
-	if(!e.target.closest("#fullMenu") && !e.target.closest('#fullMenuBtn')) {
-		fullMenuShowBtn.classList.remove("active") 
-		fullMenu.classList.remove("active") 
+/* hamburger-menu가 아닌 곳 클릭시 닫기 */
+function onClickHamburgerMenuHide (e) {
+	if(!e.target.closest("#hamburger-menu") && !e.target.closest('#hamburger-menu-btn')) {
+		hamburgerMenuBtn.classList.remove("active") 
+		hamburgerMenu.classList.remove("active") 
 	}
 }
 
 
 /* 페이지 이동 기능 */
-let page = Array.from(document.querySelectorAll('article'))
+let page = Array.from(document.querySelectorAll('section'))
 let scrolling = true;
 function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
 	this.ifInLeftData = touchStartOrDeltaY,
@@ -115,8 +115,8 @@ window.addEventListener('touchend', function(e) {
 
 
 /* 스파이스크롤 기능 */
-let asideMoveBtn = Array.from(document.querySelectorAll('.asideMoveBtn'))
-let menuMoveBtn = Array.from(document.querySelectorAll('.menuMoveBtn'))
+let asideBtn = Array.from(document.querySelectorAll('.aside-btn'))
+let menuBtn = Array.from(document.querySelectorAll('.menu-btn'))
 let index = 0
 
 function OnClickPageMove (moveBtn) {
@@ -144,30 +144,33 @@ function OnClickPageMove (moveBtn) {
 				onChangeHomePageTitle()	
 
 				if (window.innerWidth < 800) {
-					fullMenuShowBtn.classList.remove("active") 
-					fullMenu.classList.remove("active") 
+					hamburgerMenuBtn.classList.remove("active") 
+					hamburgerMenu.classList.remove("active") 
 				}
 			})
 		}
 	}
 }
-let asideBtnOnClick = new OnClickPageMove(asideMoveBtn)
-let fullMenuBtnOnClick = new OnClickPageMove(menuMoveBtn)
+let asideBtnOnClick = new OnClickPageMove(asideBtn)
+let fullMenuBtnOnClick = new OnClickPageMove(menuBtn)
 asideBtnOnClick.func()
 fullMenuBtnOnClick.func()
 
+
 /* 스파이 스크롤 버튼에 active 클래스 추가하기*/
 function addActiveClass() {
-	for(let i = 0; i < asideMoveBtn.length; i++) {
+	for(let i = 0; i < asideBtn.length; i++) {
 		if(page[i].classList.contains('active')) {
-			asideMoveBtn[i].classList.add('active')
-			menuMoveBtn[i].classList.add('active')
+			asideBtn[i].classList.add('active')
+			menuBtn[i].classList.add('active')
 		} else {
-			asideMoveBtn[i].classList.remove('active')
-			menuMoveBtn[i].classList.remove('active')
+			asideBtn[i].classList.remove('active')
+			menuBtn[i].classList.remove('active')
 		}
 	} 
 }
+
+
 /* 새로고침시 버튼에 active클래스 추가 */
 function reloadAddActiveClass() {
 	let filteredPage = page.filter((item)=> 
@@ -221,17 +224,15 @@ function ScrollToTop(clickBtn) {
 }
 
 let logo = document.querySelector(".logo a")
-let arrowBtn = document.querySelector(".scrollTop > button")
-
+let arrowBtn = document.querySelector(".scrollUp > button")
 let onClickLogoScrollToTop = new ScrollToTop(logo)
 let onClickArrowScrollToTop = new ScrollToTop(arrowBtn)
-
 onClickLogoScrollToTop.func()
 onClickArrowScrollToTop.func()
 
 
 window.addEventListener('click', function(e) {
-	onClickFullMenuHide(e)
+	onClickHamburgerMenuHide(e)
 })
 
 window.addEventListener('wheel', function(e) {
@@ -249,4 +250,3 @@ window.addEventListener('resize' , function () {
 	imgAreaHeightCalc()
   }
 ) 
-
