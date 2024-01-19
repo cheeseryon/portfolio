@@ -300,6 +300,13 @@ main section.site .content .cont-text-area div.icon-area span.jquery {
   background-position: center;
   background-size: cover;
 }
+main section.site .content .cont-text-area div.icon-area span.firebase {
+  background-image: url("../img/icon/firebase.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  margin-left: 0.5em;
+}
 main section.site .content .cont-text-area div.link-area span {
   display: inline-block;
   width: auto;
