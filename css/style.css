@@ -177,6 +177,98 @@ main section {
   position: relative;
   height: 100vh;
 }
+main section .icon-area {
+  display: flex;
+  justify-content: center;
+  line-height: 50px;
+}
+main section .icon-area span {
+  display: inline-block;
+  width: auto;
+  font-size: 2.2rem;
+  font-weight: 600;
+}
+main section .icon-area p {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  margin-left: 0.625em;
+}
+main section .icon-area p.html {
+  background-image: url("../img/icon/html.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main section .icon-area p.css {
+  background-image: url("../img/icon/css.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main section .icon-area p.scss {
+  background-image: url("../img/icon/scss.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main section .icon-area p.js {
+  background-image: url("../img/icon/js.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main section .icon-area p.react {
+  background-image: url("../img/icon/react.webp");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main section .icon-area p.vscode {
+  background-image: url("../img/icon/vscode.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main section .icon-area p.git {
+  background-image: url("../img/icon/git.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main section .icon-area p.firebase {
+  background-image: url("../img/icon/firebase.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+main section .icon-area p span {
+  position: absolute;
+  bottom: -90%;
+  left: 15%;
+  padding: 0 0.714em;
+  height: 30px;
+  line-height: 30px;
+  display: none;
+  background: #fff;
+  color: #1c242c;
+  font-size: 1.4rem;
+}
+main section .icon-area p span:before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 15%;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  transform: rotate(45deg);
+}
+main section .icon-area p:hover span {
+  display: block;
+}
 main section .content {
   position: relative;
   top: 50%;
@@ -199,7 +291,24 @@ main section.site .content:before {
   left: -20%;
   width: 200%;
   height: 120%;
-  background: #26303a;
+  border-top: 1px solid #2d3338;
+  border-bottom: 1px solid #2d3338;
+}
+main section.site .content:after {
+  content: "";
+  display: block;
+  opacity: 0.8;
+  position: absolute;
+  top: -10%;
+  left: -10%;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  height: 120%;
+  background: #2d3338;
+  transition: width 0.7s;
+  transition-delay: 0.5s;
+  z-index: -1;
 }
 main section.site .content .cont-img-area {
   width: 60%;
@@ -261,51 +370,8 @@ main section.site .content .cont-text-area div.info-area p span:before {
   background: #fff;
 }
 main section.site .content .cont-text-area div.icon-area {
+  justify-content: start;
   margin-bottom: 2.5em;
-}
-main section.site .content .cont-text-area div.icon-area span {
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  border-radius: 5px;
-  overflow: hidden;
-}
-main section.site .content .cont-text-area div.icon-area span.html {
-  background-image: url("../img/icon/html.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-main section.site .content .cont-text-area div.icon-area span.css {
-  background-image: url("../img/icon/css.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-main section.site .content .cont-text-area div.icon-area span.react {
-  background-image: url("../img/icon/react.webp");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-main section.site .content .cont-text-area div.icon-area span.js {
-  background-image: url("../img/icon/js.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-main section.site .content .cont-text-area div.icon-area span.jquery {
-  background-image: url("../img/icon/jquery.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-main section.site .content .cont-text-area div.icon-area span.firebase {
-  background-image: url("../img/icon/firebase.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  margin-left: 0.5em;
 }
 main section.site .content .cont-text-area div.link-area span {
   display: inline-block;
@@ -326,41 +392,8 @@ main section.site .content .cont-text-area div.link-area span:hover {
   color: #1c242c;
   background: #fff;
 }
-main section#home {
-  /* &.change {
-      .title-box{
-          &:before {
-              width:100%; transition: width 6s; transition-delay: 0.7s;
-          }
-
-          .item01 {
-              opacity: 1; transform: rotateX(0); transform-origin: left 57%; animation: fadeOut 1s 6.5s ease-out forwards;
-              @keyframes fadeOut {
-                  0%{opacity: 1; transform: rotateX(0)}
-                  80%{opacity: 0;}
-                  100%{opacity: 0; transform: rotateX(-90deg); display: none;}
-              }
-          }
-
-          .item02 , .item02 h3 {
-              animation: firstFadeIn 1s 7.8s ease-out forwards;
-
-              @keyframes firstFadeIn {
-                  0%{opacity: 0; visibility: visible;}
-                  100%{opacity: 1; visibility: visible;}
-              }
-          }
-
-          .item02-text {
-              animation: secondFadeIn 1s 8.8s ease-out forwards;
-
-              @keyframes secondFadeIn {
-                  0%{opacity: 0; visibility: visible;}
-                  100%{opacity: 1; visibility: visible;}
-              }
-          }
-      }
-  } */
+main section.site.active .content:after {
+  width: 140%;
 }
 main section#home .title {
   position: relative;
@@ -399,8 +432,10 @@ main section#home .content .title-box:before {
   position: absolute;
   top: 119px;
   left: 0;
+  right: 0;
+  margin: auto;
   display: inline-block;
-  width: 100%;
+  width: 0;
   height: 2px;
   background: #fff;
 }
@@ -412,8 +447,8 @@ main section#home .content .title-box .item01 {
   height: 100%;
 }
 main section#home .content .title-box .item02, main section#home .content .title-box .item02 h3, main section#home .content .title-box .item02-text {
-  visibility: visible;
-  opacity: 1;
+  visibility: hidden;
+  opacity: 0;
 }
 main section#home .content .title-box .item02-text {
   margin-top: 2.5em;
@@ -421,85 +456,42 @@ main section#home .content .title-box .item02-text {
 }
 main section#home .content .title-box .item02-text li {
   margin-bottom: 3rem;
+  /*  &.home-icon-area {
+       display: flex; justify-content: center; line-height: 50px;
+
+       span {
+           display: inline-block; width: auto; font-size: 2.2rem; font-weight: 600;
+       }
+
+       p {
+           position: relative; display: inline-block; width: 50px; height: 50px; margin-left: 0.625em;
+
+           &.css {@include background($imgUrl + "scss.png")}
+           &.js {@include background($imgUrl + "js.png")}
+           &.react {@include background($imgUrl + "react.webp")}
+           &.vscode {@include background($imgUrl + "vscode.png")}
+           &.git {@include background($imgUrl + "git.png")}
+
+           span {
+               position: absolute; bottom:-90%;; left:15%; min-width: 50px; padding: 0 0.714em; height: 30px; line-height: 30px; display:none; background: #fff; color:#1c242c; font-size: 1.4rem;
+
+               &:before {
+                   content:''; position: absolute; top:-4px; left: 15%; display: inline-block; width: 10px; height: 10px; background: #fff; transform: rotate(45deg);
+               }
+           }
+
+           &:hover {
+               span {
+                   display: block;
+               }
+           }
+       }
+
+   } */
 }
 main section#home .content .title-box .item02-text li.common-text {
   font-size: 2.8rem;
   line-height: 1.5;
-}
-main section#home .content .title-box .item02-text li.home-icon-area {
-  display: flex;
-  justify-content: center;
-  line-height: 50px;
-}
-main section#home .content .title-box .item02-text li.home-icon-area span {
-  display: inline-block;
-  width: auto;
-  font-size: 2.2rem;
-  font-weight: 600;
-}
-main section#home .content .title-box .item02-text li.home-icon-area p {
-  position: relative;
-  display: inline-block;
-  width: 50px;
-  height: 50px;
-  margin-left: 0.625em;
-}
-main section#home .content .title-box .item02-text li.home-icon-area p.css {
-  background-image: url("../img/icon/scss.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-main section#home .content .title-box .item02-text li.home-icon-area p.js {
-  background-image: url("../img/icon/js.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-main section#home .content .title-box .item02-text li.home-icon-area p.react {
-  background-image: url("../img/icon/react.webp");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-main section#home .content .title-box .item02-text li.home-icon-area p.vscode {
-  background-image: url("../img/icon/vscode.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-main section#home .content .title-box .item02-text li.home-icon-area p.git {
-  background-image: url("../img/icon/git.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-main section#home .content .title-box .item02-text li.home-icon-area p span {
-  position: absolute;
-  bottom: -90%;
-  left: 15%;
-  min-width: 50px;
-  padding: 0 0.714em;
-  height: 30px;
-  line-height: 30px;
-  display: none;
-  background: #fff;
-  color: #1c242c;
-  font-size: 1.4rem;
-}
-main section#home .content .title-box .item02-text li.home-icon-area p span:before {
-  content: "";
-  position: absolute;
-  top: -4px;
-  left: 15%;
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  transform: rotate(45deg);
-}
-main section#home .content .title-box .item02-text li.home-icon-area p:hover span {
-  display: block;
 }
 main section#home .content .title-box .item02-text li.tag span {
   display: inline-block;
@@ -507,6 +499,57 @@ main section#home .content .title-box .item02-text li.tag span {
   font-size: 1.8rem;
   color: #fff;
   opacity: 0.7;
+}
+main section#home.change .title-box:before {
+  width: 100%;
+  transition: width 3s ease;
+  transition-delay: 0.7s;
+}
+main section#home.change .title-box .item01 {
+  opacity: 1;
+  transform: rotateX(0);
+  transform-origin: left 57%;
+  animation: fadeOut 0.7s 3.7s ease-out forwards;
+}
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+    transform: rotateX(-90deg);
+    display: none;
+  }
+}
+main section#home.change .title-box .item02, main section#home.change .title-box .item02 h3 {
+  animation: firstFadeIn 0.7s 4.4s ease-out forwards;
+}
+@keyframes firstFadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+main section#home.change .title-box .item02-text {
+  animation: secondFadeIn 0.7s 5.2s ease-out forwards;
+}
+@keyframes secondFadeIn {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 main section#footer .content {
   width: 80%;
