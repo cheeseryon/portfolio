@@ -243,6 +243,19 @@ main section .icon-area p.firebase {
   background-position: center;
   background-size: cover;
 }
+main section .icon-area p.nodejs {
+  background-image: url("../img/icon/nodejs.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  width: 120px;
+}
+main section .icon-area p.mongo {
+  background-image: url("../img/icon/mongo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 main section .icon-area p span {
   position: absolute;
   bottom: -90%;
@@ -299,7 +312,7 @@ main section.site .content:after {
   display: block;
   opacity: 0.8;
   position: absolute;
-  top: -10%;
+  top: calc(-10% + 1px);
   left: -10%;
   right: 0;
   margin: auto;

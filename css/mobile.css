@@ -10,7 +10,7 @@
     main section.site .content .cont-img-area {width: 80%; margin: 0 auto;}
     main section.site .content .cont-text-area {align-self: center; width: 100%; text-align: center; margin-top: 1.25em;}
     main section.site .content .cont-text-area h3 {font-size: 3.4rem;}
-    main section.site .content .cont-text-area div.icon-area {margin-bottom: 1.25em;}
+    main section.site .content .cont-text-area div.icon-area {margin-bottom: 1.25em; justify-content: center;}
     main section.site .content .cont-text-area div.link-area span a {font-size: 1.4rem;}
 
     main section#home .content {top:45%; width:540px;}
@@ -47,6 +47,7 @@
 
     main section.site .content .cont-text-area {align-self: center; width: 100%; text-align: center; margin-top: 1.25em; padding: 0;}
     main section.site .content .cont-text-area h3 {font-size: 2.8rem;}
+    main section.site .content .cont-text-area div.info-area {justify-content: center;}
     main section.site .content .cont-text-area div.info-area p span {display: unset; font-size: 1.5rem;}
     main section.site .content .cont-text-area div.info-area p span:before {top:8px}
     main section.site .content .cont-text-area div.icon-area {margin-bottom: 1.25em;}
