@@ -45,7 +45,7 @@
     main section.site .content:before,
     main section.site .content:after {display: none;}
     main section.site .content .cont-img-area {width: 100%; margin: 0 auto; justify-content: center;}
-    main section .icon-area p:nth-child(5) {margin-top: 10px;}
+    main section .icon-area p:nth-child(7) {margin-top: 10px;}
 
     main section.site .content .cont-text-area {align-self: center; width: 100%; text-align: center; margin-top: 1.25em; padding: 0;}
     main section.site .content .cont-text-area h3 {font-size: 2.8rem;}
@@ -102,7 +102,8 @@
     main section.site .content .cont-text-area h3 {font-size: 2.4rem;}
     main section.site .content .cont-text-area h3 span {font-size: 1.8rem;}
     
-    main section .icon-area p:nth-child(n+4) {margin-top: 10px;}
+    main section .icon-area p:nth-child(n+6),
+    main section .icon-area p.nodejs {margin-top: 10px;}
     main section.site .content .cont-text-area div.info-area p span {display: unset; font-size: 1.5rem;}
     main section.site .content .cont-text-area div.info-area p span:before {top:8px}
     main section.site .content .cont-text-area div.icon-area {margin-bottom: 1.25em; justify-content: center;}
