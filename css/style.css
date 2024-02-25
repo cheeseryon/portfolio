@@ -181,6 +181,7 @@ main section .icon-area {
   display: flex;
   justify-content: center;
   line-height: 50px;
+  flex-wrap: wrap;
 }
 main section .icon-area span {
   display: inline-block;

@@ -126,7 +126,7 @@ main {
 
     section {
         .icon-area {
-            display: flex; justify-content: center; line-height: 50px;
+            display: flex; justify-content: center; line-height: 50px; flex-wrap:wrap;
     
             span {
                 display: inline-block; width: auto; font-size: 2.2rem; font-weight: 600;
