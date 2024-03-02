@@ -92,7 +92,6 @@
     main #hamburger-menu .hamburger-menu-header li {height: 40px;}
     main #hamburger-menu .menu-btn-list li a {font-size: 1.6rem;}
 
-
     main section.site .content {top:55%; flex-direction: column; align-self:center; justify-content: center; height:80%;}
     main section.site .content:before,
     main section.site .content:after {display: none;}
