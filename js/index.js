@@ -9,19 +9,85 @@ function imgAreaHeightCalc() {
 }
 
 
-/* 첫 렌더링시에만 home 화면의 title 변경 이벤트 */
-function onChangeHomePageTitle () {
-	let homePage = document.querySelector('#home')
-
-	if(homePage.classList.contains("change")) {
-		return
-	}
-	
-	if(homePage.classList.contains("active")) {
+/* 첫 렌더링시 home article 이펙트 효과 */
+const homePage = document.querySelector('#home')
+function onChangeHomePageTitle () {	
+	if(homePage.classList.contains("active") && !homePage.classList.contains("change") ) {
 		homePage.classList.add("change")
+		changeMovingStarPosition()
 	}
 }
 onChangeHomePageTitle()
+
+
+/* 움직이는 별 위치 조정*/
+function changeMovingStarPosition () {
+	const firstNameText = document.querySelector("#first-name-text")
+	const firstNameTextPositionTop = firstNameText.getBoundingClientRect().top
+	const firstNameTextPositionLeft = firstNameText.getBoundingClientRect().left
+
+	const movingStar = document.querySelector(".star01")
+	const movingStarPositionTop = movingStar.getBoundingClientRect().top
+	const movingStarPositionLeft = movingStar.getBoundingClientRect().left
+
+	const heightLength = movingStarPositionTop - firstNameTextPositionTop
+	const WidthLength = movingStarPositionLeft - firstNameTextPositionLeft
+
+	const diagonalLengthCalc = Math.pow(heightLength, 2) + Math.pow(WidthLength, 2);
+    const diagonalLength = Math.sqrt(diagonalLengthCalc);
+	let second;
+
+	if(window.matchMedia("(max-width:375px)").matches) {
+		second = diagonalLength / 100
+	} else if (window.matchMedia("(min-width:376px) and (max-width:700px)").matches) {
+		second = diagonalLength / 150
+	} else if (window.matchMedia("(min-width:376px) and (max-width:1201px)").matches) {
+		second = diagonalLength / 200
+	} else if (window.matchMedia("(min-width:1201px)").matches) {
+		second = diagonalLength / 300
+	}
+		
+
+	movingStar.style.transform = `translate(${WidthLength * -1}px,${heightLength * -1}px)`
+	movingStar.style.transition = `all ${second}s ease-out`
+
+	setTimeout(()=> {
+		firstNameText.classList.add("active")
+		movingStar.classList.add("hide")
+
+		showMainVisualText()
+	}, second * 950)
+}
+
+
+/* mainVisual fadein 요소들*/
+function showMainVisualText () {
+	const fadeInElem = Array.from(document.querySelectorAll(".fade-in-text"))
+	fadeInElem.forEach((item,idx) => {
+		setTimeout(() => {
+			item.classList.add("active")
+		}, 1050 * (idx + 1))
+	})
+}
+
+
+/* 메인비쥬얼이 보여질 시 아이콘 숨기기 */
+function hideMainVisualIcon () {
+	const hamburgerMenu = document.querySelector('#hamburger-menu')
+	const logo = document.querySelector('.logo')
+	const aside = document.querySelector('aside')
+	const hamburgerBtn = document.querySelector('#hamburger-menu-btn')
+
+	if(homePage.classList.contains("active") && !hamburgerMenu.classList.contains("active")) {
+		logo.classList.add("hide")
+		aside.classList.add("hide")
+		hamburgerBtn.classList.add("hide")
+	} else {
+		logo.classList.remove("hide")
+		aside.classList.remove("hide")
+		hamburgerBtn.classList.remove("hide")
+	}
+}
 
 
 /* 메뉴창 열고 닫기 */
@@ -39,6 +105,7 @@ function onClickHamburgerMenuToggle () {
 				this.classList.add("active") 
 				hamburgerMenu.classList.add("active") 
 			}
+			hideMainVisualIcon()
 	})
 }
 onClickHamburgerMenuToggle()
@@ -49,11 +116,12 @@ function onClickHamburgerMenuHide (e) {
 		hamburgerMenuBtn.classList.remove("active") 
 		hamburgerMenu.classList.remove("active") 
 	}
+	hideMainVisualIcon()
 }
 
 
 /* 페이지 이동 기능 */
-let page = Array.from(document.querySelectorAll('section'))
+let page = Array.from(document.querySelectorAll('article'))
 let scrolling = true;
 function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
 	this.ifInLeftData = touchStartOrDeltaY,
@@ -89,6 +157,7 @@ function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
 	
 		scrollToTopIconShow()
 		onChangeHomePageTitle()
+		hideMainVisualIcon()
 	}
 }
 
@@ -115,7 +184,7 @@ window.addEventListener('touchend', function(e) {
 
 
 /* 스파이스크롤 기능 */
-let asideBtn = Array.from(document.querySelectorAll('.aside-btn'))
+let asideBtn = Array.from(document.querySelectorAll('.aside-btn > button'))
 let menuBtn = Array.from(document.querySelectorAll('.menu-btn'))
 let index = 0
 
@@ -142,6 +211,7 @@ function OnClickPageMove (moveBtn) {
 				addActiveClass()
 				scrollToTopIconShow()	
 				onChangeHomePageTitle()	
+				hideMainVisualIcon()
 
 				if (window.innerWidth < 800) {
 					hamburgerMenuBtn.classList.remove("active") 
@@ -181,6 +251,7 @@ function reloadAddActiveClass() {
 	page[index].classList.add('active')
 	addActiveClass()
 	onChangeHomePageTitle()
+	hideMainVisualIcon()
 }
 
 
@@ -223,11 +294,9 @@ function ScrollToTop(clickBtn) {
 	}
 }
 
-let logo = document.querySelector(".logo a")
+
 let arrowBtn = document.querySelector(".scrollUp > button")
-let onClickLogoScrollToTop = new ScrollToTop(logo)
 let onClickArrowScrollToTop = new ScrollToTop(arrowBtn)
-onClickLogoScrollToTop.func()
 onClickArrowScrollToTop.func()
 
 

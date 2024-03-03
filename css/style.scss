@@ -1,10 +1,11 @@
 @charset "utf-8";
 @import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css); 
+@import url('https://webfontworld.github.io/PyeongChang/PyeongChangPeace.css');
 
-$mainColor : #1c242c;
 $grayColor : #8c9597;
 $lightGrayColor : #6f787a;
-$imgUrl : "../img/icon/";
+$iconUrl : "../img/icon/";
+$imgUrl : "../img/";
 
 @mixin displayFlex($justifyContent, $alignItem) {
     display:flex;
@@ -19,29 +20,31 @@ $imgUrl : "../img/icon/";
     background-size: cover;
 }
 
-
 html {background: #1c242c; font-size:0.625em; color:#fff}
 body {font-family:"pretendard",sans-serif; font-size:1.6rem; overflow:hidden;}
 * {box-sizing:border-box;}
 
-.inner {width: 90%; min-width:324px; margin: 0 auto;}
-.text-shadow {color:#1c242c; text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;}
+.inner {width: 90%; min-width:324px; margin: 0 auto; height: 100%;}
+.text-shadow {text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;}
 .mobile-text {display: none;}
 
 
 /* header && fullMenu 공통 */
 .logo {
-    width: 50px; height: 50px;
+    width: 50px; height: 50px;  transition: all 0.7s; background: #fff; color:#030011;
     a {
-        display: block; width: 100%; height: 100%; line-height: 50px; font-size: 6rem; text-align: center; background: #fff; border-radius:1px;
+        display: block; width: 100%; height: 100%; line-height: 50px; font-size: 4.4rem; text-align: center; border-radius:1px;
     }
+
+    &.hide {visibility: hidden; opacity: 0;}
 }
 
+.home-title, .logo, h3  {font-family: 'PyeongChangPeace';}
 
 /* header */
 header {
     @include displayFlex(unset,center);
-    position: fixed; z-index: 200; width: 100%; height: 80px; border-bottom:1px solid #fff; background: #1c242c;
+    position: fixed; z-index: 200; width: 100%; height: 80px;
     
     ul {
         @include displayFlex(space-between,center);
@@ -55,11 +58,11 @@ header {
 
 
 /* main */
-main {
+#wrap {
     overflow: hidden;
 
     #hamburger-menu-btn {
-        overflow: hidden; position: fixed; top:20px; right:5%; z-index: 999; width: 36px; height: 36px;
+        overflow: hidden; position: fixed; top:20px; right:5%; z-index: 999; width: 36px; height: 36px; transition: all 0.7s;
     
         button {
             display: block; width: 100%; height: 100%;
@@ -80,11 +83,14 @@ main {
                 }
             }
         }
+
+        &.hide {visibility: hidden; opacity: 0;}
     }
 
     #hamburger-menu {
+        @include background($imgUrl + "menuBg.png");
         display:block; opacity:0; position:fixed; top:0; right:-660px; z-index: 200; width: 100%; max-width: 660px; height: 100vh;
-        border-left:1px solid #fff; background: $lightGrayColor; transform: translateX(0); transition: all 0.8s;
+        border-left:1px solid #fff; transform: translateX(0); transition: all 0.8s;
         
         &:before {
             content:''; display: inline-block; position: absolute; top:79px; width: 100%; height: 1px; background: #fff;
@@ -108,292 +114,287 @@ main {
         #menu-btn-list {
             li.menu-btn {
                 height: 70px; line-height: 70px;
-    
+                color:#fff;
                 &:hover {
-                    background: $lightGrayColor;
+                    background:#bbbbbb;
                 }
     
                 &.active {
-                    background: #fff; color:#1c242c;
+                    background: #fff; color:#030011;
                 }
     
                 a {
-                    display: block; height: 100%; line-height: 70px; font-size: 20px;  font-weight: 600; text-align: center;
+                    display: block; height: 100%; line-height: 70px; font-size: 20px;  font-weight: 600; text-align: center; 
                 }
             }
         }
     }
 
-    section {
-        .icon-area {
-            display: flex; justify-content: center; line-height: 50px; flex-wrap:wrap;
-    
-            span {
-                display: inline-block; width: auto; font-size: 2.2rem; font-weight: 600;
-            }
-    
-            p {
-                position: relative; display: inline-block; width: 50px; height: 50px; margin-left: 0.625em;
-    
-                &.html {@include background($imgUrl + "html.png")}
-                &.css {@include background($imgUrl + "css.png")}
-                &.scss {@include background($imgUrl + "scss.png")}
-                &.js {@include background($imgUrl + "js.png")}
-                &.react {@include background($imgUrl + "react.webp")}
-                &.vscode {@include background($imgUrl + "vscode.png")}
-                &.git {@include background($imgUrl + "git.png")}
-                &.firebase{@include background($imgUrl + "firebase.png")}
-                &.nodejs{
-                    @include background($imgUrl + "nodejs.png");
-                    width: 120px;
-                }
-                &.mongo{@include background($imgUrl + "mongo.png")}
-    
+    main {
+        z-index: 100;
+        article {
+            background: url(../img/pageBg.png) no-repeat;
+            background-position: center;
+            background-size: cover;
+
+            .icon-area {
+                display: flex; justify-content: center; line-height: 50px; flex-wrap:wrap;
+        
                 span {
-                    position: absolute; bottom:-90%;; left:15%; padding: 0 0.714em; height: 30px; line-height: 30px; display:none; background: #fff; color:#1c242c; font-size: 1.4rem;
-                
-                    &:before {
-                        content:''; position: absolute; top:-4px; left: 15%; display: inline-block; width: 10px; height: 10px; background: #fff; transform: rotate(45deg);
-                    }
-                }
-    
-                &:hover {
-                    span {
-                        display: block;
-                    }
-                }
-            }
-            
-        }
-        position: relative; height: 100vh;
-
-        .content {
-            position: relative; top:50%; left:50%; width:100%; height:55%; transform:translate(-50%,-50%);
-        }
-
-        &.site {
-            .content {
-                @include displayFlex(space-between,unset);
-
-                &:before {
-                    content:''; display:block; opacity: 0.8; position: absolute; top:-10%; left:-20%; width: 200%; height: 120%; border-top:1px solid #2d3338; border-bottom:1px solid #2d3338;
-                }
-                &:after {
-                    content:''; display:block; opacity: 0.8; position: absolute; top:calc(-10% + 1px); left:-10%; right:0; margin:auto; width: 0%; height: 120%; background: #2d3338; transition: width 0.7s; transition-delay: 0.5s; z-index: -1;
+                    display: inline-block; width: auto; font-size: 2.2rem; font-weight: 600;
                 }
         
-
-                .cont-img-area {
-                    width: 60%; height: 100%;
-
-                    figure {
-                        position: relative; width:100%; height:100%; z-index: 300; overflow: hidden;  border-radius:2px; box-shadow:rgba(0, 0, 0, 0.24) 0px 30px 30px;
-                        
-                        img {width:100%; height:100%;}
-                    }
-                }
-
-                .cont-text-area {
-                    @include displayFlex(center,unset);
-                    flex-flow: column; position: relative; width:37%; padding:0 1.25em;
-                    
-                    h3 {
-                        margin-bottom: 0.5em; font-size: 4rem;
-
-                        span {
-                            display:inline-block; margin-left:0.2em; font-size:2.6rem; font-weight: 500;
-                        }
-                    }
-
-                    div {
-                        margin-bottom: 1.25em;
-
-                        &.info-area {
-                            p {
-                                margin-bottom: 0.312em;
-
-                                span {
-                                    position:relative; display: inline-block; margin-left:0.8em; font-size:2rem; line-height:1.5;
-
-                                    &:before {
-                                        content:''; position:absolute; top:14px; left:-0.6em; display:inline-block; width:6px; height:2px; background:#fff;
-                                    }
-                                }
-                            }
-                        }
-
-                        &.icon-area {
-                            justify-content:start;
-                            margin-bottom:2.5em;
-
-                        }
-
-                        &.link-area {
-                            span {
-                                display: inline-block; width: auto; height: 100%; margin-right: 0.625em; border:1px solid #fff; border-radius:2px; transition:0.1s;
-                                
-                                a {
-                                    display:block;  padding:1em 1.25em;  font-size:1.6rem; font-weight:500; 
-                                }
-
-                                &:hover {
-                                    color:$mainColor; background: #fff;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-
-            &.active {
-                .content {
-                    &:after {
-                        width: 140%;
-                    }
-                }
-            }
-        }
-
-        &#home {
-            .title {
-                position: relative;  color:#fff; font-size: 10rem; font-weight: 700; text-align: center;
-            }
-
-            h1.title {letter-spacing: 4px;}
-            h2.title {letter-spacing: 6px;}
-            h3.title {letter-spacing: 1px;}
-
-            .content {
-                @include displayFlex(center, center);
-                width: 100%; height:55%;
-
-                .title-box {
-                    position: relative; width: 90%; max-width: 600px; min-width: 300px; height: 40%; max-height: 300px; min-height:200px;
-
-                    &:before {
-                        content:''; position: absolute; top:119px; left: 0; right: 0; margin: auto; display: inline-block; width: 0; height: 2px; background: #fff;
-                    }
-
-                    .item01 {
-                        position: absolute; top:0; left:0; width: 100%; height: 100%;
-                    }
-
-                    .item02 , .item02 h3 , .item02-text{
-                        visibility: hidden; opacity:0;
-                    }
-
-                    .item02-text {
-                        margin-top: 2.5em; text-align: center;
-
-                        li {
-                            margin-bottom: 3rem;
-
-                            &.common-text {
-                                font-size: 2.8rem; line-height: 1.5;
-                            }
-
-                           /*  &.home-icon-area {
-                                display: flex; justify-content: center; line-height: 50px;
-
-                                span {
-                                    display: inline-block; width: auto; font-size: 2.2rem; font-weight: 600;
-                                }
-
-                                p {
-                                    position: relative; display: inline-block; width: 50px; height: 50px; margin-left: 0.625em;
-
-                                    &.css {@include background($imgUrl + "scss.png")}
-                                    &.js {@include background($imgUrl + "js.png")}
-                                    &.react {@include background($imgUrl + "react.webp")}
-                                    &.vscode {@include background($imgUrl + "vscode.png")}
-                                    &.git {@include background($imgUrl + "git.png")}
-
-                                    span {
-                                        position: absolute; bottom:-90%;; left:15%; min-width: 50px; padding: 0 0.714em; height: 30px; line-height: 30px; display:none; background: #fff; color:#1c242c; font-size: 1.4rem;
-                                    
-                                        &:before {
-                                            content:''; position: absolute; top:-4px; left: 15%; display: inline-block; width: 10px; height: 10px; background: #fff; transform: rotate(45deg);
-                                        }
-                                    }
-
-                                    &:hover {
-                                        span {
-                                            display: block;
-                                        }
-                                    }
-                                }
-                                
-                            } */
-
-                            &.tag {
-                                span {
-                                    display: inline-block; margin: 1em 0.714em 0 0; font-size: 1.8rem; color:#fff; opacity: 0.7;
-                                }                            
-                            }
-                        }
-                    }
-                }
-            }
-
-            &.change {
-                .title-box{
-                    &:before {
-                        width:100%; transition: width 3s ease; transition-delay: 0.7s;
-                    }
-
-                    .item01 {
-                        opacity: 1; transform: rotateX(0); transform-origin: left 57%; animation: fadeOut 0.7s 3.7s ease-out forwards;
-                        @keyframes fadeOut {
-                            0%{opacity: 1; transform: rotateX(0)}
-                            80%{opacity: 0;}
-                            100%{opacity: 0; transform: rotateX(-90deg); display: none;}
-                        }
-                    }
-
-                    .item02 , .item02 h3 {
-                        animation: firstFadeIn 0.7s 4.4s ease-out forwards;
-
-                        @keyframes firstFadeIn {
-                            0%{opacity: 0; visibility: hidden;}
-                            100%{opacity: 1; visibility: visible;}
-                        }
-                    }
-
-                    .item02-text {
-                        animation: secondFadeIn 0.7s 5.2s ease-out forwards;
-
-                        @keyframes secondFadeIn {
-                            0%{opacity: 0; visibility: hidden;}
-                            100%{opacity: 1; visibility: visible;}
-                        }
-                    }
-                }
-            }
-        }
-
-        &#footer {
-            .content {
-                width:80%; height: auto; text-align: center;
-
                 p {
-                    margin-bottom: 2em; line-height:3; font-size:2.4rem; font-weight:500;
-
+                    position: relative; display: inline-block; width: 50px; height: 50px; margin: 0.312em;
+        
+                    &.html {@include background($iconUrl + "html.png")}
+                    &.css {@include background($iconUrl + "css.png")}
+                    &.scss {@include background($iconUrl + "scss.png")}
+                    &.js {@include background($iconUrl + "js.png")}
+                    &.react {@include background($iconUrl + "react.png")}
+                    &.vscode {@include background($iconUrl + "vscode.png")}
+                    &.git {@include background($iconUrl + "git.png")}
+                    &.firebase{@include background($iconUrl + "firebase.png")}
+                    &.nodejs{
+                        @include background($iconUrl + "nodejs.png");
+                        width: 120px;
+                    }
+                    &.mongo{@include background($iconUrl + "mongo.png")}
+        
                     span {
-                        display: block;
+                        position: absolute; bottom:-90%; left:50%; padding: 0 0.714em; height: 30px; line-height: 30px; display:none; background: #fff; text-align: center; color:#1c242c; font-size: 1.4rem; transform:translateX(-50%);
+                
+                        &:before {
+                            content:''; position: absolute; top:-4px; left: 50%; display: inline-block; width: 10px; height: 10px; background: #fff; transform: translateX(-50%) rotate(45deg);
+                        }
+                    }
+        
+                    &:hover {
+                        span {
+                            display: block;
+                        }
                     }
                 }
-
-                .link-area {
-                    span {
-                        display: inline-block;
-
-                        a {
-                            display: inline-block; padding:1em 1.25em;  font-size:1.6rem; font-weight:500; transition:0.1s; border:1px solid #fff; border-radius:2px; 
+                
+            }
+            position: relative; height: 100vh;
+    
+            .content {
+                position: relative; top:50%; left:50%; width:100%; height:55%; transform:translate(-50%,-50%);
+            }
+    
+            &.site {            
+                .content {
+                    @include displayFlex(space-between,unset);
+    
+                    .cont-img-area {
+                        width: 60%; height: 100%;
+    
+                        figure {
+                            position: relative; width:100%; height:100%; z-index: 300; overflow: hidden;  border-radius:2px; box-shadow:rgba(0, 0, 0, 0.24) 0px 30px 30px;
+                            
+                            img {width:100%; height:100%;}
                         }
-
-                        &:hover {
+                    }
+    
+                    .cont-text-area {
+                        @include displayFlex(center,unset);
+                        flex-flow: column; position: relative; width:37%; padding:0 1.25em;
+                        
+                        h3 {
+                            margin-bottom: 0.5em; font-size: 4rem;
+    
+                            span {
+                                display:inline-block; margin-left:0.2em; font-size:2.6rem; font-weight: 500;
+                            }
+                        }
+    
+                        div {
+                            margin-bottom: 1.25em;
+    
+                            &.info-area {
+                                p {
+                                    margin-bottom: 0.312em;
+    
+                                    span {
+                                        position:relative; display: inline-block; margin-left:0.8em; font-size:2rem; line-height:1.5;
+    
+                                        &:before {
+                                            content:''; position:absolute; top:14px; left:-0.6em; display:inline-block; width:6px; height:2px; background:#fff;
+                                        }
+                                    }
+                                }
+                            }
+    
+                            &.icon-area {
+                                justify-content:start;
+                                margin-bottom:2.5em;
+    
+                            }
+    
+                            &.link-area {
+                                span {
+                                    display: inline-block; width: auto; height: 100%; margin-right: 0.625em; border:1px solid #fff; border-radius:2px; transition:0.1s;
+                                    
+                                    a {
+                                        display:block;  padding:1em 1.25em;  font-size:1.6rem; font-weight:500; 
+                                    }
+    
+                                    &:hover {
+                                        color:#1c242c; background: #fff;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+    
+            &#home {
+               @include background($imgUrl + "mainBg.png");
+    
+                .home-effect-icon {
+                    position: absolute; top:0; left:0; width: 100%; height: 100%;
+    
+                    .star01 {
+                        position: absolute; top:5%; right:-10%; display: inline-block; opacity: 0.9; width: 80px; height: 80px; background: url(../img/star1.png) no-repeat center/cover; transform-origin: center;
+                        &.hide {
+                            display: none;
+                        }
+                    }
+    
+                    .star02 {
+                        position: absolute; top:20%; left:20%; display: inline-block; opacity: 0; width: 10px; height: 10px; background: url(../img/star02.png) no-repeat center/cover;
+                        animation: shiningStar 5s 1s infinite;
+                        @keyframes shiningStar {
+                            0% {opacity: 0;}
+                            50% {opacity: 1;}
+                            100% {opacity: 0;}
+                        }
+                    }
+                    .star03 {
+                        position: absolute; top:30%; right:30%; display: inline-block; opacity: 0; width: 10px; height: 10px; background: url(../img/star03.png) no-repeat center/cover;
+                        animation: shiningStar 9s 5s  infinite;
+                        @keyframes shiningStar {
+                            0% {opacity: 0;}
+                            50% {opacity: 1;}
+                            100% {opacity: 0;}
+                        }
+                    }
+                    .star04 {
+                        position: absolute; top:80%; left:40%; display: inline-block; opacity: 0; width: 10px; height: 10px; background: url(../img/star04.png) no-repeat center/cover;
+                        animation: shiningStar 7s 3s infinite;
+                        @keyframes shiningStar {
+                            0% {opacity: 0;}
+                            50% {opacity: 1;}
+                            100% {opacity: 0;}
+                        }
+                    }
+                }
+    
+                .content {
+                    @include displayFlex(center, center);
+    
+                    display: flex; flex-direction: column;
+    
+                    .home-title {
+                        p {
+                            text-align: center; color:#fff; font-size: 10rem; font-weight: 700; text-align: center; letter-spacing: 4px;
+    
+                            #first-name-text {
+                                color:#050215; transition:all 0.7s;
+    
+                                &.active {
+                                    color:#dfc100
+                                }
+                            }
+                            #name-text {
+                                opacity: 0; transition:all 0.8s;
+    
+                                &.active {
+                                    opacity: 1;
+                                }
+                            }
+                        }
+                    }
+    
+                    .home-info {
+                        opacity: 0; transition: all 0.8s;
+                        .icon-area {
+                            margin-top: 1em;
+                        }
+                        /*  &.home-icon-area {
+                                    display: flex; justify-content: center; line-height: 50px;
+        
+                                    span {
+                                        display: inline-block; width: auto; font-size: 2.2rem; font-weight: 600;
+                                    }
+        
+                                    p {
+                                        position: relative; display: inline-block; width: 50px; height: 50px; margin-left: 0.625em;
+        
+                                        &.css {@include background($iconUrl + "scss.png")}
+                                        &.js {@include background($iconUrl + "js.png")}
+                                        &.react {@include background($iconUrl + "react.webp")}
+                                        &.vscode {@include background($iconUrl + "vscode.png")}
+                                        &.git {@include background($iconUrl + "git.png")}
+        
+                                        span {
+                                            position: absolute; bottom:-90%;; left:15%; min-width: 50px; padding: 0 0.714em; height: 30px; line-height: 30px; display:none; background: #fff; color:#1c242c; font-size: 1.4rem;
+                                        
+                                            &:before {
+                                                content:''; position: absolute; top:-4px; left: 15%; display: inline-block; width: 10px; height: 10px; background: #fff; transform: rotate(45deg);
+                                            }
+                                        }
+        
+                                        &:hover {
+                                            span {
+                                                display: block;
+                                            }
+                                        }
+                                    }
+                                    
+                                } */
+                        .tag {
+                            margin-top: 1em; display: flex; justify-content: center;
+        
+                            span {
+                                display: inline-block; margin: 1em 0.714em 0 0; font-size: 1.8rem; color:#fff; opacity: 0.7;
+                            }                            
+                        }
+    
+                        &.active {
+                            opacity: 1;
+                        }
+                    }
+                    
+                }
+            }
+    
+            &#footer {
+                .content {
+                    width:80%; height: auto; text-align: center;
+    
+                    p {
+                        margin-bottom: 2em; line-height:3; font-size:2.4rem; font-weight:500;
+    
+                        span {
+                            display: block;
+                        }
+                    }
+    
+                    .link-area {
+                        span {
+                            display: inline-block;
+    
                             a {
-                                color:$mainColor; background: #fff
+                                display: inline-block; padding:1em 1.25em;  font-size:1.6rem; font-weight:500; transition:0.1s; border:1px solid #fff; border-radius:2px; 
+                            }
+    
+                            &:hover {
+                                a {
+                                    color:#333; background: #fff
+                                }
                             }
                         }
                     }
@@ -401,9 +402,10 @@ main {
             }
         }
     }
+    
 
     #scroll {
-        position: fixed; bottom:20px; left:50%; transform:translateX(-50%); width: 40px; height: 70px;
+        position: fixed; bottom:20px; left:50%; transform:translateX(-50%); width: 40px; height: 70px; z-index: 50;
     
         div {
             position: absolute; top:0; left:0; display: block; width: 100%; height: 100%; text-align: center; font-size: 1.4rem; transition: all 0.2s 0.2s;
@@ -483,36 +485,40 @@ main {
     }
 
     aside {
-        position:fixed; top:50%; right:40px; transform:translateY(-50%); width: 8px;
+        position:fixed; top:50%; right:40px; transform:translateY(-50%); width: 16px; transition: all 0.7s;
 
         .aside-btn-area {
             li {
-                position: relative; width: 100%; height: 8px; margin-bottom: 1em; font-size: 20px; cursor:pointer; border-radius: 50%;
-
-                &:before {
-                    content:''; position: absolute; top:0; left:0; width: 100%; height: 100%; display: block; border-radius:50%; background:#6f787a; transition: 0.2s;
-                }
+                width: 100%; height: 16px; margin-bottom: 0.5em; font-size: 2rem; cursor:pointer;
 
                 button {
-                    position:absolute; top:-75%; display: inline-block; visibility: hidden; opacity: 0; width: 2000%; min-width: 50px; max-width: 280px; line-height: 25px; padding-left: 30px; transition: 0.3s;
-                }
-            }
+                    @include background($iconUrl + "star.png");
+                    position: relative; width: 100%; height: 100%; display: block; padding: 0; opacity: 0.6;
 
-            li:hover {
-                &:before {
-                    transform: scale(1.5)
-                }
-            }
+                    &:before {
+                        position: absolute; content:""; top:-5%; left:-5%; width: 110%; height: 110%; display: none; background: url(../img/starBg.png) no-repeat center/cover;
+                    }
 
-            li.active {
-                &:before {
-                    transform: scale(1.2); opacity: 1; background-color: transparent; box-shadow: 0 0 0 2px #fff;
-                }
+                    &:hover {
+                        opacity: 1;
+                    }
 
-                button {
-                    visibility: visible; opacity: 1;
+                    &.active {                        
+                        animation: starRotate 7s infinite linear; opacity: 1;
+                        @keyframes starRotate {
+                            0%{transform: scale(1.5) rotate(0deg);}
+                            100%{transform: scale(1.5) rotate(360deg);}
+                        
+                        }
+
+                        &:before {
+                            display: block;
+                        }
+                    }
                 }
             }
         }
+
+        &.hide {visibility: hidden; opacity: 0;}
     }
 }
