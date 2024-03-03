@@ -5,7 +5,7 @@
     #wrap #hamburger-menu{right:-400px; max-width: 400px;}
     #wrap #hamburger-menu.active {transform: translateX(-400px);}
 
-    #wrap main article.site .content {top:53%; flex-direction: column; align-self:center; justify-content: center; height:90%;}
+    #wrap main article.site .content {top:53%; flex-direction: column; align-self:center; justify-content: center;}
     #wrap main article.site .content:before {top:-20px; height: calc(100% + 20px);}
     #wrap main article.site .content .cont-img-area {width: 80%; margin: 0 auto;}
     #wrap main article.site .content .cont-text-area {align-self: center; width: 100%; text-align: center; margin-top: 1.25em;}
@@ -38,7 +38,7 @@
     #wrap #hamburger-menu.hamburger-menu-header li {height: 40px;}
 
     #wrap main article + article {background-position:left top}
-    #wrap main article.site .content {top:53%; flex-direction: column; align-self:center; justify-content: center; height: 80%}
+    #wrap main article.site .content {top:53%; flex-direction: column; align-self:center; justify-content: center;}
     #wrap main article.site .content:before,
     #wrap main article.site .content:after {display: none;}
     #wrap main article.site .content .cont-img-area {width: 100%; margin: 0 auto; justify-content: center;}
