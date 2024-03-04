@@ -216,8 +216,8 @@ function OnClickPageMove (moveBtn) {
 				hideMainVisualIcon()
 
 				if (window.innerWidth < 800) {
-					hamburgerMenuBtn.classList.remove("active") 
-					hamburgerMenu.classList.remove("active") 
+					hamburgerMenuBtn02.classList.remove("active") 
+					hamburgerMenu02.classList.remove("active") 
 				}
 			})
 		}

@@ -76,13 +76,14 @@
     .mobile-text {display: block;}
 
     .logo {width: 40px; height: 40px;}
-    .logo a {line-height: 40px; font-size: 4.8rem;}
+    .logo a {line-height: 40px; font-size: 3.6rem;}
 
     #wrap #hamburger-menu-btn {top:20px; width: 30px; height: 30px; }
 
     #wrap #hamburger-menu{right:-400px; max-width: 400px;}
     #wrap #hamburger-menu:before {top:69px}
     #wrap #hamburger-menu.active {transform: translateX(-400px);}
+    #wrap #hamburger-menu .inner {height: 70px;}
     #wrap #hamburger-menu.hamburger-menu-header {height: 70px;}
     #wrap #hamburger-menu.hamburger-menu-header li {height: 40px;}
     #wrap #hamburger-menu.menu-btn-list li a {font-size: 1.6rem;}
