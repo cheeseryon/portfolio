@@ -619,8 +619,8 @@ header ul li {
   border-radius: 2px;
 }
 #wrap main article#footer .content .link-area span:hover a {
-  color: #333;
-  background: #fff;
+  color: #fff;
+  background: #dfc100;
 }
 #wrap main article + article:before {
   content: "";
