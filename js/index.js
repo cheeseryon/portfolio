@@ -155,6 +155,7 @@ function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
 			}, 600)
 		}
 	
+		addActiveClass()
 		scrollToTopIconShow()
 		onChangeHomePageTitle()
 		hideMainVisualIcon()
