@@ -16,6 +16,7 @@ function onChangeHomePageTitle () {
 		homePage.classList.add("change")
 		changeMovingStarPosition()
 	}
+	return
 }
 onChangeHomePageTitle()
 
@@ -73,37 +74,37 @@ function showMainVisualText () {
 
 /* 메인비쥬얼이 보여질 시 아이콘 숨기기 */
 function hideMainVisualIcon () {
-	const hamburgerMenu = document.querySelector('#hamburger-menu')
+	const hamburgerMenu01 = document.querySelector('#hamburger-menu')
 	const logo = document.querySelector('.logo')
 	const aside = document.querySelector('aside')
-	const hamburgerBtn = document.querySelector('#hamburger-menu-btn')
+	const hamburgerBtn01 = document.querySelector('#hamburger-menu-btn')
 
-	if(homePage.classList.contains("active") && !hamburgerMenu.classList.contains("active")) {
+	if(homePage.classList.contains("active") && !hamburgerMenu01.classList.contains("active")) {
 		logo.classList.add("hide")
 		aside.classList.add("hide")
-		hamburgerBtn.classList.add("hide")
+		hamburgerBtn01.classList.add("hide")
 	} else {
 		logo.classList.remove("hide")
 		aside.classList.remove("hide")
-		hamburgerBtn.classList.remove("hide")
+		hamburgerBtn01.classList.remove("hide")
 	}
 }
 
 
 /* 메뉴창 열고 닫기 */
-let hamburgerMenuBtn = document.querySelector('#hamburger-menu-btn > button')
-let hamburgerMenu = document.querySelector('#hamburger-menu')
+let hamburgerMenuBtn02 = document.querySelector('#hamburger-menu-btn > button')
+let hamburgerMenu02 = document.querySelector('#hamburger-menu')
 
-/* hamburgerMenuBtn 클릭시 열고 닫기 */
+/* hamburgerMenuBtn02 클릭시 열고 닫기 */
 function onClickHamburgerMenuToggle () {
-	hamburgerMenuBtn.addEventListener("click" , function(e) {
+	hamburgerMenuBtn02.addEventListener("click" , function(e) {
 		e.preventDefault()
 		 	if(this.classList.contains("active")) {
 				this.classList.remove("active") 
-				hamburgerMenu.classList.remove("active") 
+				hamburgerMenu02.classList.remove("active") 
 			} else {
 				this.classList.add("active") 
-				hamburgerMenu.classList.add("active") 
+				hamburgerMenu02.classList.add("active") 
 			}
 			hideMainVisualIcon()
 	})
@@ -113,8 +114,8 @@ onClickHamburgerMenuToggle()
 /* hamburger-menu가 아닌 곳 클릭시 닫기 */
 function onClickHamburgerMenuHide (e) {
 	if(!e.target.closest("#hamburger-menu") && !e.target.closest('#hamburger-menu-btn')) {
-		hamburgerMenuBtn.classList.remove("active") 
-		hamburgerMenu.classList.remove("active") 
+		hamburgerMenuBtn02.classList.remove("active") 
+		hamburgerMenu02.classList.remove("active") 
 	}
 	hideMainVisualIcon()
 }
@@ -302,7 +303,7 @@ onClickArrowScrollToTop.func()
 
 
 window.addEventListener('click', function(e) {
-	onClickHamburgerMenuHide(e)
+	(e)
 })
 
 window.addEventListener('wheel', function(e) {

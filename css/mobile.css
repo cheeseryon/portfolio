@@ -37,7 +37,10 @@
 
     #wrap #hamburger-menu.hamburger-menu-header li {height: 40px;}
 
-    #wrap main article + article {background-position:left top}
+    #wrap main article + article.active:before {
+        animation: pageBgMove 140s infinite linear;
+    }
+
     #wrap main article.site .content {top:53%; flex-direction: column; align-self:center; justify-content: center;}
     #wrap main article.site .content:before,
     #wrap main article.site .content:after {display: none;}
@@ -84,7 +87,9 @@
     #wrap #hamburger-menu.hamburger-menu-header li {height: 40px;}
     #wrap #hamburger-menu.menu-btn-list li a {font-size: 1.6rem;}
 
-    #wrap main article + article {background-position:left top}
+    #wrap main article + article.active:before {
+        animation: pageBgMove 140s infinite linear;
+    }
     #wrap main article.site .content {top:55%; flex-direction: column; align-self:center; justify-content: center; height:80%;}
     #wrap main article.site .content:before,
     #wrap main article.site .content:after {display: none;}

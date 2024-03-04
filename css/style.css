@@ -1,6 +1,14 @@
 @charset "UTF-8";
 @import url(https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.8/dist/web/static/pretendard.css);
-@import url("https://webfontworld.github.io/PyeongChang/PyeongChangPeace.css");
+/* @import url('https://webfontworld.github.io/PyeongChang/PyeongChangPeace.css'); */
+@font-face {
+  font-family: "PyeongChangPeace";
+  src: url("../font/PyeongChangPeace-Bold.ttf") format("woff2"), url("../font/PyeongChangPeace-bold.woff") format("woff");
+  /* src: url('../font/PyeongChangPeace-Bold.ttf') format('woff2')
+      url('font/PyeongChangPeace.woff') format('woff'); */
+  font-weight: normal;
+  font-style: normal;
+}
 html {
   background: #1c242c;
   font-size: 0.625em;
@@ -177,7 +185,7 @@ header ul li {
   color: #fff;
 }
 #wrap #hamburger-menu #menu-btn-list li.menu-btn:hover {
-  background: #bbbbbb;
+  background: #b0b1b4;
 }
 #wrap #hamburger-menu #menu-btn-list li.menu-btn.active {
   background: #fff;
@@ -195,9 +203,6 @@ header ul li {
   z-index: 100;
 }
 #wrap main article {
-  background: url(../img/pageBg.png) no-repeat;
-  background-position: center;
-  background-size: cover;
   position: relative;
   height: 100vh;
 }
@@ -363,6 +368,8 @@ header ul li {
 }
 #wrap main article.site .content .cont-text-area div.info-area p {
   margin-bottom: 0.312em;
+  color: #fff;
+  font-weight: 700px;
 }
 #wrap main article.site .content .cont-text-area div.info-area p span {
   position: relative;
@@ -385,6 +392,10 @@ header ul li {
   justify-content: start;
   margin-bottom: 2.5em;
 }
+#wrap main article.site .content .cont-text-area div.link-area {
+  color: #fff;
+  font-weight: 700px;
+}
 #wrap main article.site .content .cont-text-area div.link-area span {
   display: inline-block;
   width: auto;
@@ -401,8 +412,9 @@ header ul li {
   font-weight: 500;
 }
 #wrap main article.site .content .cont-text-area div.link-area span:hover {
-  color: #1c242c;
-  background: #fff;
+  border: #dfc100 1px solid;
+  color: #fff;
+  background: #dfc100;
 }
 #wrap main article#home {
   background-image: url("../img/mainBg.png");
@@ -610,6 +622,50 @@ header ul li {
   color: #333;
   background: #fff;
 }
+#wrap main article + article:before {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/pageBg.png");
+  background-repeat: no-repeat;
+  background-position: 0px, 0px;
+  background-size: cover;
+  opacity: 0.8;
+  z-index: -10;
+}
+#wrap main article + article:after {
+  content: "";
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/pageBgStar.png");
+  background-repeat: no-repeat;
+  background-position: -400px, 0px;
+  background-size: cover;
+  z-index: -1;
+}
+#wrap main article + article.active:before {
+  animation: pageBgMove 70s infinite linear;
+  animation-delay: 0.7s;
+}
+@keyframes pageBgMove {
+  0% {
+    background-position: 0px 0px;
+  }
+  50% {
+    background-position: 100% 0px;
+  }
+  0% {
+    background-position: 0px 0px;
+  }
+}
 #wrap #scroll {
   position: fixed;
   bottom: 20px;
@@ -754,7 +810,7 @@ header ul li {
   height: 100%;
   display: block;
   padding: 0;
-  opacity: 0.6;
+  opacity: 0.8;
 }
 #wrap aside .aside-btn-area li button:before {
   position: absolute;
@@ -768,6 +824,7 @@ header ul li {
 }
 #wrap aside .aside-btn-area li button:hover {
   opacity: 1;
+  transform: scale(1.3);
 }
 #wrap aside .aside-btn-area li button.active {
   animation: starRotate 7s infinite linear;
