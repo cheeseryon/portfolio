@@ -225,6 +225,18 @@ header ul li {
   height: 50px;
   margin: 0.312em;
 }
+#wrap main article .icon-area p.photo {
+  background-image: url("../img/icon/photo.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+#wrap main article .icon-area p.vscode {
+  background-image: url("../img/icon/vscode.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
 #wrap main article .icon-area p.html {
   background-image: url("../img/icon/html.png");
   background-repeat: no-repeat;
@@ -434,9 +446,9 @@ header ul li {
   top: 5%;
   right: -10%;
   display: inline-block;
-  opacity: 0.9;
-  width: 80px;
-  height: 80px;
+  opacity: 1;
+  width: 100px;
+  height: 100px;
   background: url(../img/star1.png) no-repeat center/cover;
   transform-origin: center;
 }
@@ -541,41 +553,16 @@ header ul li {
 #wrap main article#home .content .home-info {
   opacity: 0;
   transition: all 0.8s;
-  /*  &.home-icon-area {
-              display: flex; justify-content: center; line-height: 50px;
-
-              span {
-                  display: inline-block; width: auto; font-size: 2.2rem; font-weight: 600;
-              }
-
-              p {
-                  position: relative; display: inline-block; width: 50px; height: 50px; margin-left: 0.625em;
-
-                  &.css {@include background($iconUrl + "scss.png")}
-                  &.js {@include background($iconUrl + "js.png")}
-                  &.react {@include background($iconUrl + "react.webp")}
-                  &.vscode {@include background($iconUrl + "vscode.png")}
-                  &.git {@include background($iconUrl + "git.png")}
-
-                  span {
-                      position: absolute; bottom:-90%;; left:15%; min-width: 50px; padding: 0 0.714em; height: 30px; line-height: 30px; display:none; background: #fff; color:#1c242c; font-size: 1.4rem;
-
-                      &:before {
-                          content:''; position: absolute; top:-4px; left: 15%; display: inline-block; width: 10px; height: 10px; background: #fff; transform: rotate(45deg);
-                      }
-                  }
-
-                  &:hover {
-                      span {
-                          display: block;
-                      }
-                  }
-              }
-
-          } */
+}
+#wrap main article#home .content .home-info .info {
+  font-size: 2rem;
+  font-weight: 500;
+  text-align: center;
+  opacity: 0.8;
+  margin-top: 2em;
 }
 #wrap main article#home .content .home-info .icon-area {
-  margin-top: 1em;
+  margin-top: 1.5em;
 }
 #wrap main article#home .content .home-info .tag {
   margin-top: 1em;
@@ -602,6 +589,7 @@ header ul li {
   line-height: 3;
   font-size: 2.4rem;
   font-weight: 500;
+  text-shadow: 1px 1px 1px #707070;
 }
 #wrap main article#footer .content p span {
   display: block;
@@ -653,7 +641,6 @@ header ul li {
 }
 #wrap main article + article.active:before {
   animation: pageBgMove 70s infinite linear;
-  animation-delay: 0.7s;
 }
 @keyframes pageBgMove {
   0% {
@@ -674,6 +661,7 @@ header ul li {
   width: 40px;
   height: 70px;
   z-index: 50;
+  opacity: 1;
 }
 #wrap #scroll div {
   position: absolute;
@@ -778,10 +766,13 @@ header ul li {
   z-index: -1;
 }
 #wrap #scroll div.show {
-  visibility: visible;
   opacity: 1;
 }
 #wrap #scroll div.hide {
+  visibility: hidden;
+  opacity: 0;
+}
+#wrap #scroll.hide {
   visibility: hidden;
   opacity: 0;
 }

@@ -1,3 +1,6 @@
+let index = 0
+let scrolling = true;
+
 /* imgArea height 조절 */
 function imgAreaHeightCalc() {
 	let imgArea = document.querySelectorAll('.cont-img-area')
@@ -6,88 +9,6 @@ function imgAreaHeightCalc() {
 				item.style.height = item.clientWidth * 0.75 + "px"
 			})
 		}
-}
-
-
-/* 첫 렌더링시 home article 이펙트 효과 */
-const homePage = document.querySelector('#home')
-function onChangeHomePageTitle () {	
-	if(homePage.classList.contains("active") && !homePage.classList.contains("change") ) {
-		homePage.classList.add("change")
-		changeMovingStarPosition()
-	}
-	return
-}
-onChangeHomePageTitle()
-
-
-/* 움직이는 별 위치 조정*/
-function changeMovingStarPosition () {
-	const firstNameText = document.querySelector("#first-name-text")
-	const firstNameTextPositionTop = firstNameText.getBoundingClientRect().top
-	const firstNameTextPositionLeft = firstNameText.getBoundingClientRect().left
-
-	const movingStar = document.querySelector(".star01")
-	const movingStarPositionTop = movingStar.getBoundingClientRect().top
-	const movingStarPositionLeft = movingStar.getBoundingClientRect().left
-
-	const heightLength = movingStarPositionTop - firstNameTextPositionTop
-	const WidthLength = movingStarPositionLeft - firstNameTextPositionLeft
-
-	const diagonalLengthCalc = Math.pow(heightLength, 2) + Math.pow(WidthLength, 2);
-    const diagonalLength = Math.sqrt(diagonalLengthCalc);
-	let second;
-
-	if(window.matchMedia("(max-width:375px)").matches) {
-		second = diagonalLength / 100
-	} else if (window.matchMedia("(min-width:376px) and (max-width:700px)").matches) {
-		second = diagonalLength / 150
-	} else if (window.matchMedia("(min-width:376px) and (max-width:1201px)").matches) {
-		second = diagonalLength / 200
-	} else if (window.matchMedia("(min-width:1201px)").matches) {
-		second = diagonalLength / 300
-	}
-		
-
-	movingStar.style.transform = `translate(${WidthLength * -1}px,${heightLength * -1}px)`
-	movingStar.style.transition = `all ${second}s ease-out`
-
-	setTimeout(()=> {
-		firstNameText.classList.add("active")
-		movingStar.classList.add("hide")
-
-		showMainVisualText()
-	}, second * 950)
-}
-
-
-/* mainVisual fadein 요소들*/
-function showMainVisualText () {
-	const fadeInElem = Array.from(document.querySelectorAll(".fade-in-text"))
-	fadeInElem.forEach((item,idx) => {
-		setTimeout(() => {
-			item.classList.add("active")
-		}, 1050 * (idx + 1))
-	})
-}
-
-
-/* 메인비쥬얼이 보여질 시 아이콘 숨기기 */
-function hideMainVisualIcon () {
-	const hamburgerMenu01 = document.querySelector('#hamburger-menu')
-	const logo = document.querySelector('.logo')
-	const aside = document.querySelector('aside')
-	const hamburgerBtn01 = document.querySelector('#hamburger-menu-btn')
-
-	if(homePage.classList.contains("active") && !hamburgerMenu01.classList.contains("active")) {
-		logo.classList.add("hide")
-		aside.classList.add("hide")
-		hamburgerBtn01.classList.add("hide")
-	} else {
-		logo.classList.remove("hide")
-		aside.classList.remove("hide")
-		hamburgerBtn01.classList.remove("hide")
-	}
 }
 
 
@@ -111,6 +32,7 @@ function onClickHamburgerMenuToggle () {
 }
 onClickHamburgerMenuToggle()
 
+
 /* hamburger-menu가 아닌 곳 클릭시 닫기 */
 function onClickHamburgerMenuHide (e) {
 	if(!e.target.closest("#hamburger-menu") && !e.target.closest('#hamburger-menu-btn')) {
@@ -121,9 +43,125 @@ function onClickHamburgerMenuHide (e) {
 }
 
 
-/* 페이지 이동 기능 */
+/* 첫 렌더링시 home article 이펙트 효과 */
+const homePage = document.querySelector('#home')
+function onChangeHomePageTitle () {	
+	if(homePage.classList.contains("active") && !homePage.classList.contains("change") ) {
+		homePage.classList.add("change")
+		changeMovingStarPosition()
+	}
+}
+onChangeHomePageTitle()
+
+
+/* 움직이는 별 위치 조정*/
+let second;
+function changeMovingStarPosition () {
+	const firstNameText = document.querySelector("#first-name-text")
+	const firstNameTextPositionTop = firstNameText.getBoundingClientRect().top
+	const firstNameTextPositionLeft = firstNameText.getBoundingClientRect().left
+
+	const movingStar = document.querySelector(".star01")
+	const movingStarPositionTop = movingStar.getBoundingClientRect().top
+	const movingStarPositionLeft = movingStar.getBoundingClientRect().left
+
+	const heightLength = movingStarPositionTop - firstNameTextPositionTop
+	const WidthLength = movingStarPositionLeft - firstNameTextPositionLeft
+
+	const diagonalLengthCalc = Math.pow(heightLength, 2) + Math.pow(WidthLength, 2);
+    const diagonalLength = Math.sqrt(diagonalLengthCalc);
+
+
+	if(window.matchMedia("(max-width:375px)").matches) {
+		second = diagonalLength / 100
+	} else if (window.matchMedia("(min-width:376px) and (max-width:700px)").matches) {
+		second = diagonalLength / 150
+	} else if (window.matchMedia("(min-width:376px) and (max-width:1201px)").matches) {
+		second = diagonalLength / 250
+	} else if (window.matchMedia("(min-width:1201px)").matches) {
+		second = diagonalLength / 350
+	}
+		
+
+	movingStar.style.transform = `translate(${WidthLength * -1}px,${heightLength * -1}px)`
+	movingStar.style.transition = `all ${second}s ease-out`
+
+	setTimeout(()=> {
+		firstNameText.classList.add("active")
+		movingStar.classList.add("hide")
+
+		showMainVisualText()
+	}, second * 900)
+	preventScroll(second)
+}
+
+
+function preventScroll(second) {
+	const scrollbar = document.querySelector("#scroll")
+	scrolling = false;
+	scrollbar.classList.add("hide")
+
+	setTimeout(() => {		
+		scrollbar.classList.remove("hide")
+		scrolling = true;
+	},second * 1800)
+}
+	
+
+
+/* mainVisual fadein 요소들*/
+function showMainVisualText () {
+	const fadeInElem = Array.from(document.querySelectorAll(".fade-in-text"))
+	fadeInElem.forEach((item,idx) => {
+		setTimeout(() => {
+			item.classList.add("active")
+		}, 950 * (idx + 1))
+	})
+}
+
+
+/* 메인비쥬얼이 보여질 시 아이콘 숨기기 */
+function hideMainVisualIcon () {
+	const hamburgerMenu01 = document.querySelector('#hamburger-menu')
+	const logo = document.querySelector('.logo')
+	const aside = document.querySelector('aside')
+	const hamburgerBtn01 = document.querySelector('#hamburger-menu-btn')
+
+	if(homePage.classList.contains("active") && !hamburgerMenu01.classList.contains("active")) {
+		logo.classList.add("hide")
+		aside.classList.add("hide")
+		hamburgerBtn01.classList.add("hide")
+	} else {
+		logo.classList.remove("hide")
+		aside.classList.remove("hide")
+		hamburgerBtn01.classList.remove("hide")
+	}
+}
+
+/* function preventScroll (idx) {
+	let scrollbar = document.querySelector("#scroll")
+	const firstNameText = document.querySelector("#first-name-text")
+	const movingStar = document.querySelector(".star01")
+
+
+	if(index === 0) {
+		console.log(second)
+		setTimeout(() => {		
+			firstNameText.classList.add("active")
+			movingStar.classList.add("hide")
+			scrollbar.classList.add("show")
+
+			showMainVisualText()
+			scrolling = true;
+		},second * 950)
+	} else {
+		scrolling = true;
+		scrollbar.classList.add("show")
+	}
+}
+preventScroll() */
+
 let page = Array.from(document.querySelectorAll('article'))
-let scrolling = true;
 function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
 	this.ifInLeftData = touchStartOrDeltaY,
 	this.ifInRightData = touchEndOrNumberZero,
@@ -188,7 +226,7 @@ window.addEventListener('touchend', function(e) {
 /* 스파이스크롤 기능 */
 let asideBtn = Array.from(document.querySelectorAll('.aside-btn > button'))
 let menuBtn = Array.from(document.querySelectorAll('.menu-btn'))
-let index = 0
+
 
 function OnClickPageMove (moveBtn) {
 	this.btn = moveBtn;
@@ -251,9 +289,13 @@ function reloadAddActiveClass() {
 	index = filteredPage[0].getAttribute('data-pageIdx')
 
 	page[index].classList.add('active')
+
+	if(index === 0) {			
+		preventScroll()
+	}
 	addActiveClass()
 	onChangeHomePageTitle()
-	hideMainVisualIcon()
+	hideMainVisualIcon()	
 }
 
 
