@@ -16,6 +16,7 @@ function imgAreaHeightCalc() {
 let hamburgerMenuBtn02 = document.querySelector('#hamburger-menu-btn > button')
 let hamburgerMenu02 = document.querySelector('#hamburger-menu')
 
+
 /* hamburgerMenuBtn02 클릭시 열고 닫기 */
 function onClickHamburgerMenuToggle () {
 	hamburgerMenuBtn02.addEventListener("click" , function(e) {
@@ -106,7 +107,6 @@ function preventScroll(second) {
 		scrolling = true;
 	},second * 1800)
 }
-	
 
 
 /* mainVisual fadein 요소들*/
@@ -138,28 +138,6 @@ function hideMainVisualIcon () {
 	}
 }
 
-/* function preventScroll (idx) {
-	let scrollbar = document.querySelector("#scroll")
-	const firstNameText = document.querySelector("#first-name-text")
-	const movingStar = document.querySelector(".star01")
-
-
-	if(index === 0) {
-		console.log(second)
-		setTimeout(() => {		
-			firstNameText.classList.add("active")
-			movingStar.classList.add("hide")
-			scrollbar.classList.add("show")
-
-			showMainVisualText()
-			scrolling = true;
-		},second * 950)
-	} else {
-		scrolling = true;
-		scrollbar.classList.add("show")
-	}
-}
-preventScroll() */
 
 let page = Array.from(document.querySelectorAll('article'))
 function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
@@ -224,10 +202,6 @@ window.addEventListener('touchend', function(e) {
 
 
 /* 스파이스크롤 기능 */
-let asideBtn = Array.from(document.querySelectorAll('.aside-btn > button'))
-let menuBtn = Array.from(document.querySelectorAll('.menu-btn'))
-
-
 function OnClickPageMove (moveBtn) {
 	this.btn = moveBtn;
 	this.func = function () {
@@ -261,6 +235,8 @@ function OnClickPageMove (moveBtn) {
 		}
 	}
 }
+let asideBtn = Array.from(document.querySelectorAll('.aside-btn > button'))
+let menuBtn = Array.from(document.querySelectorAll('.menu-btn'))
 let asideBtnOnClick = new OnClickPageMove(asideBtn)
 let fullMenuBtnOnClick = new OnClickPageMove(menuBtn)
 asideBtnOnClick.func()
@@ -343,10 +319,6 @@ let arrowBtn = document.querySelector(".scrollUp > button")
 let onClickArrowScrollToTop = new ScrollToTop(arrowBtn)
 onClickArrowScrollToTop.func()
 
-
-window.addEventListener('click', function(e) {
-	(e)
-})
 
 window.addEventListener('wheel', function(e) {
 		e.preventDefault()

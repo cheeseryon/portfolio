@@ -528,7 +528,7 @@ header ul li {
   display: flex;
   flex-direction: column;
 }
-#wrap main article#home .content .home-title p {
+#wrap main article#home .content .home-title h1 {
   text-align: center;
   color: #fff;
   font-size: 10rem;
@@ -536,18 +536,18 @@ header ul li {
   text-align: center;
   letter-spacing: 4px;
 }
-#wrap main article#home .content .home-title p #first-name-text {
+#wrap main article#home .content .home-title h1 #first-name-text {
   color: #050215;
   transition: all 0.7s;
 }
-#wrap main article#home .content .home-title p #first-name-text.active {
+#wrap main article#home .content .home-title h1 #first-name-text.active {
   color: #dfc100;
 }
-#wrap main article#home .content .home-title p #name-text {
+#wrap main article#home .content .home-title h1 #name-text {
   opacity: 0;
   transition: all 0.8s;
 }
-#wrap main article#home .content .home-title p #name-text.active {
+#wrap main article#home .content .home-title h1 #name-text.active {
   opacity: 1;
 }
 #wrap main article#home .content .home-info {
@@ -662,6 +662,7 @@ header ul li {
   height: 70px;
   z-index: 50;
   opacity: 1;
+  transition: all 0.5s;
 }
 #wrap #scroll div {
   position: absolute;
