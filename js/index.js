@@ -1,6 +1,7 @@
 let index = 0
 let scrolling = true;
 
+
 /* imgArea height 조절 */
 function imgAreaHeightCalc() {
 	let imgArea = document.querySelectorAll('.cont-img-area')
@@ -12,21 +13,19 @@ function imgAreaHeightCalc() {
 }
 
 
-/* 메뉴창 열고 닫기 */
-let hamburgerMenuBtn02 = document.querySelector('#hamburger-menu-btn > button')
-let hamburgerMenu02 = document.querySelector('#hamburger-menu')
+/* hamburgerMenu onoff */
+let hamburgerMenuBtn = document.querySelector('#hamburger-menu-btn > button')
+let hamburgerMenu = document.querySelector('#hamburger-menu')
 
-
-/* hamburgerMenuBtn02 클릭시 열고 닫기 */
 function onClickHamburgerMenuToggle () {
-	hamburgerMenuBtn02.addEventListener("click" , function(e) {
+	hamburgerMenuBtn.addEventListener("click" , function(e) {
 		e.preventDefault()
 		 	if(this.classList.contains("active")) {
 				this.classList.remove("active") 
-				hamburgerMenu02.classList.remove("active") 
+				hamburgerMenu.classList.remove("active") 
 			} else {
 				this.classList.add("active") 
-				hamburgerMenu02.classList.add("active") 
+				hamburgerMenu.classList.add("active") 
 			}
 			hideMainVisualIcon()
 	})
@@ -37,8 +36,8 @@ onClickHamburgerMenuToggle()
 /* hamburger-menu가 아닌 곳 클릭시 닫기 */
 function onClickHamburgerMenuHide (e) {
 	if(!e.target.closest("#hamburger-menu") && !e.target.closest('#hamburger-menu-btn')) {
-		hamburgerMenuBtn02.classList.remove("active") 
-		hamburgerMenu02.classList.remove("active") 
+		hamburgerMenuBtn.classList.remove("active") 
+		hamburgerMenu.classList.remove("active") 
 	}
 	hideMainVisualIcon()
 }
@@ -56,7 +55,6 @@ onChangeHomePageTitle()
 
 
 /* 움직이는 별 위치 조정*/
-let second;
 function changeMovingStarPosition () {
 	const firstNameText = document.querySelector("#first-name-text")
 	const firstNameTextPositionTop = firstNameText.getBoundingClientRect().top
@@ -72,7 +70,7 @@ function changeMovingStarPosition () {
 	const diagonalLengthCalc = Math.pow(heightLength, 2) + Math.pow(WidthLength, 2);
     const diagonalLength = Math.sqrt(diagonalLengthCalc);
 
-
+	let second;
 	if(window.matchMedia("(max-width:375px)").matches) {
 		second = diagonalLength / 100
 	} else if (window.matchMedia("(min-width:376px) and (max-width:700px)").matches) {
@@ -83,7 +81,6 @@ function changeMovingStarPosition () {
 		second = diagonalLength / 350
 	}
 		
-
 	movingStar.style.transform = `translate(${WidthLength * -1}px,${heightLength * -1}px)`
 	movingStar.style.transition = `all ${second}s ease-out`
 
@@ -97,6 +94,7 @@ function changeMovingStarPosition () {
 }
 
 
+/* home article 화면에서는 스크롤 막기 */
 function preventScroll(second) {
 	const scrollbar = document.querySelector("#scroll")
 	scrolling = false;
@@ -139,6 +137,7 @@ function hideMainVisualIcon () {
 }
 
 
+/* 스크롤 or 터치시 페이지 넘기는 효과 */
 let page = Array.from(document.querySelectorAll('article'))
 function PageMove(touchStartOrDeltaY , touchEndOrNumberZero) {
 	this.ifInLeftData = touchStartOrDeltaY,
@@ -228,8 +227,8 @@ function OnClickPageMove (moveBtn) {
 				hideMainVisualIcon()
 
 				if (window.innerWidth < 800) {
-					hamburgerMenuBtn02.classList.remove("active") 
-					hamburgerMenu02.classList.remove("active") 
+					hamburgerMenuBtn.classList.remove("active") 
+					hamburgerMenu.classList.remove("active") 
 				}
 			})
 		}
@@ -296,28 +295,22 @@ scrollToTopIconShow()
 
 
 /* 맨위로 이동 */
-function ScrollToTop(clickBtn) {
-	this.btn = clickBtn
-	this.func = function() {
-		this.btn.addEventListener("click", (e) => {
-			e.preventDefault()
-			index = 0;
-			window.scrollTo({top:0, behavior:"smooth"})
-			for(let i = 0; i < page.length; i++) {
-				page[i].classList.remove("active")
-			}
-			page[0].classList.add("active")
+function ScrollToTop() {
+	let arrowBtn = document.querySelector(".scrollUp > button")
+	arrowBtn.addEventListener("click", (e) => {
+		e.preventDefault()
+		index = 0;
+		window.scrollTo({top:0, behavior:"smooth"})
+		for(let i = 0; i < page.length; i++) {
+			page[i].classList.remove("active")
+		}
+		page[0].classList.add("active")
 
-			addActiveClass()
-			scrollToTopIconShow()
-		})
-	}
+		addActiveClass()
+		scrollToTopIconShow()
+	})
 }
-
-
-let arrowBtn = document.querySelector(".scrollUp > button")
-let onClickArrowScrollToTop = new ScrollToTop(arrowBtn)
-onClickArrowScrollToTop.func()
+ScrollToTop()
 
 
 window.addEventListener('wheel', function(e) {
